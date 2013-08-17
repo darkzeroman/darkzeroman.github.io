@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
+  <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
+  <link href="http://darkzeroman.github.io/"/>
+  <updated>2013-08-17T16:42:10-05:00</updated>
+  <id>http://darkzeroman.github.io/</id>
+  <author>
+    <name><![CDATA[Vidhur Vohra]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Something New]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/08/17/something-new/"/>
+    <updated>2013-08-17T16:42:00-05:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/08/17/something-new</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[First Post]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/08/17/first-post/"/>
+    <updated>2013-08-17T16:38:00-05:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/08/17/first-post</id>
+    <content type="html"><![CDATA[<p>So I haven’t really ever used GitHub pages before, but I think this is an awesome way to get quick posts out without having to worry about wordpress and such. All I have to do is just edit a few files, run a few commands, and then push the source! How easy is that?</p>
+]]></content>
+  </entry>
+  
+</feed>
