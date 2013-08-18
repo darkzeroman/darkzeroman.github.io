@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-08-18T16:47:10-05:00</updated>
+  <updated>2013-08-18T17:00:59-05:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[JS/Node Build System for Sublime]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime/"/>
+    <updated>2013-08-18T16:56:00-05:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime</id>
+    <content type="html"><![CDATA[<p>To be able to build Javascript in Sublime Text, it&rsquo;s necessary to add a new Build System.</p>
+
+<p>Go to Tools &ndash;> Build System &ndash;> New Build System &hellip;</p>
+
+<p>And add the following:</p>
+
+<figure class='code'><figcaption><span>Node.sublime-build</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="s2">&quot;cmd&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;/usr/local/bin/node&quot;</span><span class="p">,</span> <span class="s2">&quot;$file&quot;</span><span class="p">],</span>
+</span><span class='line'>    <span class="s2">&quot;working_dir&quot;</span><span class="o">:</span> <span class="s2">&quot;${project_path:${folder}}&quot;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It might be necessary to adjust the path to node for your own setup.</p>
+
+<p>Now save, restart Sublime Text, and you should be able to build Javascript with Sublime Text!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Passing Arguments]]></title>
