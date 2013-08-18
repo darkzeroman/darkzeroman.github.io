@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-08-18T17:00:59-05:00</updated>
+  <updated>2013-08-18T17:04:58-05:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -14,13 +14,15 @@
 
   
   <entry>
-    <title type="html"><![CDATA[JS/Node Build System for Sublime]]></title>
+    <title type="html"><![CDATA[Javascript/Node Build System for Sublime]]></title>
     <link href="http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime/"/>
     <updated>2013-08-18T16:56:00-05:00</updated>
     <id>http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime</id>
     <content type="html"><![CDATA[<p>To be able to build Javascript in Sublime Text, it&rsquo;s necessary to add a new Build System.</p>
 
-<p>Go to Tools &ndash;> Build System &ndash;> New Build System &hellip;</p>
+<p>To be able to do that, it&rsquo;s necessary to first have Node installed, so head over to <a href="http://nodejs.org/download/">Node.js homepage</a> to install node.js first.</p>
+
+<p>With the Sublime Text program open, navigate to <code>Tools</code> &ndash;> <code>Build System</code> &ndash;> <code>New Build System ...</code></p>
 
 <p>And add the following:</p>
 
