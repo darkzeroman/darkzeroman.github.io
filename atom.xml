@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-08-18T00:46:44-05:00</updated>
+  <updated>2013-08-18T13:21:11-05:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -14,14 +14,101 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Markdown Reference]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/08/18/markdown-reference/"/>
+    <updated>2013-08-18T12:39:00-05:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/08/18/markdown-reference</id>
+    <content type="html"><![CDATA[<p>What is Markdown good for?
+Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is converted into valid HTML. Some examples are GitHub Repository README and how I write these blog posts.</p>
+
+<p>The following is a quick overview of the most common Markdown syntax.</p>
+
+<h2>Headers</h2>
+
+<p>  <code># Level one header</code></p>
+
+<p>  <code>## Level two header</code></p>
+
+<p>  <code>### Level three header</code></p>
+
+<p>  &hellip; Up to six hashes are supported</p>
+
+<p>I would show an example, but it doesn&rsquo;t work well because I&rsquo;m already using Markdown for this blog post!</p>
+
+<h2>Links</h2>
+
+<p>  <code>[This is a link](http://www.darkzeroman.github.io)</code></p>
+
+<p>  <a href="http://www.darkzeroman.github.io">This is a link</a></p>
+
+<h2>Lists</h2>
+
+<h3>Unordered Lists</h3>
+
+<p>Use any of the following: <code>*, +, -</code></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>* Item 1
+</span><span class='line'>* Item 2
+</span><span class='line'>* Item 3</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>This</li>
+<li>is</li>
+<li>a list</li>
+</ul>
+
+
+<h3>Ordered Lists</h3>
+
+<p>Ordered lists use number followed by period.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>1. with
+</span><span class='line'>2. numbers</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>with</li>
+<li>numbers</li>
+</ol>
+
+
+<h2>Formatting/Emphasis</h2>
+
+<p>  <code>_italic_ or *italic*</code></p>
+
+<p>  <em>italic</em></p>
+
+<p>  <code>__bold__ or **bold**</code></p>
+
+<p>  <strong>bold</strong></p>
+
+<hr />
+
+<h2>More Resources:</h2>
+
+<ul>
+<li><a href="http://daringfireball.net/projects/markdown/syntax">Full Markdown Syntax Document</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Removing All Pip Packages]]></title>
     <link href="http://darkzeroman.github.io/blog/2013/08/17/removing-pip-packages/"/>
     <updated>2013-08-17T16:42:00-05:00</updated>
     <id>http://darkzeroman.github.io/blog/2013/08/17/removing-pip-packages</id>
     <content type="html"><![CDATA[<p>If you need to remove all pip packages currently installed.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>pip freeze | xargs pip uninstall -y</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">pip</span> <span class="n">freeze</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">pip</span> <span class="n">uninstall</span> <span class="o">-</span><span class="n">y</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>This is more useful than you think!</p>
