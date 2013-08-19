@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Markdown Reference - A Place For Me To Leave My Thoughts</title>
+  <title>Efficient SQL (Custom) - A Place For Me To Leave My Thoughts</title>
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="What is Markdown good for?
-Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is &hellip;">
+  <meta name="description" content="During one of my interviews I was asked whether I knew how to make SQL queries more efficient. At that point in time I had barely used SQL and had to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/18/markdown-reference">
+  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/18/efficient-sql">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A Place For Me To Leave My Thoughts" type="application/atom+xml">
@@ -81,7 +80,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   
   <header>
     
-      <h1 class="entry-title">Markdown Reference</h1>
+      <h1 class="entry-title">Efficient SQL (Custom)</h1>
     
     
       <p class="meta">
@@ -97,91 +96,68 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   
 
 
-<time datetime="2013-08-18T12:39:00-05:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-08-18T18:37:00-05:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>What is Markdown good for?
-Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is converted into valid HTML. Some examples are GitHub Repository README and how I write these blog posts.</p>
+<div class="entry-content"><p>During one of my interviews I was asked whether I knew how to make SQL queries more efficient. At that point in time I had barely used SQL and had to ask the interviewer to move on to another subject.</p>
 
-<p>The following is a quick overview of the most common Markdown syntax.</p>
+<p>But since I have started to use SQL in the <a href="http://dssg.io">DSSG Program</a> I&rsquo;ve started to deal with SQL queries that can possibly take a while to run. And I started to wonder how to make SQL queries more efficient and I found this <a href="http://www.databasejournal.com/features/mssql/article.php/1437391/Transact-SQL-Optimization-Tips.htm">article</a>.</p>
 
-<h2>Headers</h2>
-
-<p>  <code># Level one header</code></p>
-
-<p>  <code>## Level two header</code></p>
-
-<p>  <code>### Level three header</code></p>
-
-<p>  &hellip; Up to six hashes are supported</p>
-
-<p>I would show an example, but it doesn&rsquo;t work well because I&rsquo;m already using Markdown for this blog post!</p>
-
-<h2>Links</h2>
-
-<p>  <code>[This is a link](http://www.darkzeroman.github.io)</code></p>
-
-<p>  <a href="http://www.darkzeroman.github.io">This is a link</a></p>
-
-<h2>Lists</h2>
-
-<h3>Unordered Lists</h3>
-
-<p>Use any of the following: <code>*, +, -</code></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>* Item 1
-</span><span class='line'>* Item 2
-</span><span class='line'>* Item 3</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>This</li>
-<li>is</li>
-<li>a list</li>
-</ul>
-
-
-<h3>Ordered Lists</h3>
-
-<p>Ordered lists use number followed by period.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>1. with
-</span><span class='line'>2. numbers</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li>with</li>
-<li>numbers</li>
-</ol>
-
-
-<h2>Formatting/Emphasis</h2>
-
-<p>  <code>_italic_ or *italic*</code></p>
-
-<p>  <em>italic</em></p>
-
-<p>  <code>__bold__ or **bold**</code></p>
-
-<p>  <strong>bold</strong></p>
+<p>The following is a quick summary of link.</p>
 
 <hr />
 
-<h2>More Resources:</h2>
+<h3>Tips to Speed Up Queries</h3>
 
 <ul>
-<li><a href="http://daringfireball.net/projects/markdown/syntax">Full Markdown Syntax Document</a></li>
+<li>Try to restrict the queries result set by using the WHERE clause.</li>
 </ul>
 
+
+<p>This one seems obvious.</p>
+
+<ul>
+<li>Try to restrict the queries result st by returning only the particular columns from the table, not all the table&rsquo;s columns.</li>
+</ul>
+
+
+<p>Another one that seems obvious.</p>
+
+<ul>
+<li>If you need to return the total table&rsquo;s row count, use an alternative instead of <code>SELECT COUNT(*)</code> statement.</li>
+</ul>
+
+
+<p>This one is interesting because I didn&rsquo;t know there were alternatives, I usually do run the <code>SELECT COUNT(*)</code> statement! I will update how to get the table count in Postgres soon.</p>
+
+<ul>
+<li>Try to avoid the HAVING clause whenever possible.</li>
+</ul>
+
+
+<p>This is an interesting one, I wouldn&rsquo;t think the HAVING clause would be that computationally expensive, but a good point is made that if it&rsquo;s possible to filter out unneeded values with a WHERE clause, that should be used.</p>
+
+<ul>
+<li>Use SELECT statements with LIMIT keyword if you need to return only the first n rows.</li>
+</ul>
+
+
+<p>Makes sense, I do this quite often when I am testing to make sure my query is running as expected. Usually used to run join on a subset before running it on the whole data set.</p>
+
+<ul>
+<li>Try to use UNION ALL statement stead of UNION.</li>
+</ul>
+
+
+<p>UNION ALL does not look for duplicates while UNION does look for duplicates whether they exist or not.</p>
+
+<hr />
+
+<p>I will add more SQL efficiency tips as I come across them!</p>
 </div>
 
 
@@ -204,7 +180,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   
 
 
-<time datetime="2013-08-18T12:39:00-05:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-08-18T18:37:00-05:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
       
 
 
@@ -212,7 +188,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/18/markdown-reference/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/18/markdown-reference/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/18/efficient-sql/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/18/efficient-sql/" >Tweet</a>
   
   
   
@@ -221,10 +197,10 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/17/removing-pip-packages/" title="Previous Post: Removing All Pip Packages">&laquo; Removing All Pip Packages</a>
+        <a class="basic-alignment left" href="/blog/2013/08/18/js-slash-node-build-system-for-sublime/" title="Previous Post: Javascript/Node Build System for Sublime">&laquo; Javascript/Node Build System for Sublime</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/08/18/passing-arguments/" title="Next Post: Passing Arguments">Passing Arguments &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/08/18/my-osx-setup/" title="Next Post: My OSX Setup">My OSX Setup &raquo;</a>
       
     </p>
   </footer>

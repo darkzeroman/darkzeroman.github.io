@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-08-18T17:04:58-05:00</updated>
+  <updated>2013-08-18T19:10:08-05:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -12,6 +12,110 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My OSX Setup]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/08/18/my-osx-setup/"/>
+    <updated>2013-08-18T18:58:00-05:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/08/18/my-osx-setup</id>
+    <content type="html"><![CDATA[<p>My brother has just started college and I recommended that he should get a Macbook Pro because I have had a blast using one for the past one year. Also, he is interested in Computer Science and said he would like tips to know what to install for a good workstation setup.</p>
+
+<p>Before an internship I primarily used a Linux box and was comfortable using the command line, but always had trouble with various things such as sound, turning on after a sleep, and performance issues on my previous Linux laptop. This might have been due to the fact that the machine wasn&rsquo;t the highest quality machine and might not have been a good fit for Ubuntu.</p>
+
+<p>As I was making the list I figured it would be good to put up the list online so others can look at my setup and decide whether they want to use any of the tools I do.</p>
+
+<h3>General OSX Desktop Tools:</h3>
+
+<ul>
+<li>Toggl</li>
+<li>Yoink</li>
+<li>Bartender</li>
+<li>Flux</li>
+<li>gfxCardStatus</li>
+<li>Alfred</li>
+<li>TotalFinder</li>
+<li>Spectacle</li>
+<li>KeyRemap4Macbook</li>
+</ul>
+
+
+<h3>Development Tools</h3>
+
+<ul>
+<li>MacVim</li>
+<li>Oh My Zsh</li>
+<li>DBeaver</li>
+<li>Sublime Text</li>
+<li>Iterm2</li>
+</ul>
+
+
+<p>I have remapped the Caps Lock to Control and will have a post discussing how I have made my life better with remapping keys.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Efficient SQL (Custom)]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/08/18/efficient-sql/"/>
+    <updated>2013-08-18T18:37:00-05:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/08/18/efficient-sql</id>
+    <content type="html"><![CDATA[<p>During one of my interviews I was asked whether I knew how to make SQL queries more efficient. At that point in time I had barely used SQL and had to ask the interviewer to move on to another subject.</p>
+
+<p>But since I have started to use SQL in the <a href="http://dssg.io">DSSG Program</a> I&rsquo;ve started to deal with SQL queries that can possibly take a while to run. And I started to wonder how to make SQL queries more efficient and I found this <a href="http://www.databasejournal.com/features/mssql/article.php/1437391/Transact-SQL-Optimization-Tips.htm">article</a>.</p>
+
+<p>The following is a quick summary of link.</p>
+
+<hr />
+
+<h3>Tips to Speed Up Queries</h3>
+
+<ul>
+<li>Try to restrict the queries result set by using the WHERE clause.</li>
+</ul>
+
+
+<p>This one seems obvious.</p>
+
+<ul>
+<li>Try to restrict the queries result st by returning only the particular columns from the table, not all the table&rsquo;s columns.</li>
+</ul>
+
+
+<p>Another one that seems obvious.</p>
+
+<ul>
+<li>If you need to return the total table&rsquo;s row count, use an alternative instead of <code>SELECT COUNT(*)</code> statement.</li>
+</ul>
+
+
+<p>This one is interesting because I didn&rsquo;t know there were alternatives, I usually do run the <code>SELECT COUNT(*)</code> statement! I will update how to get the table count in Postgres soon.</p>
+
+<ul>
+<li>Try to avoid the HAVING clause whenever possible.</li>
+</ul>
+
+
+<p>This is an interesting one, I wouldn&rsquo;t think the HAVING clause would be that computationally expensive, but a good point is made that if it&rsquo;s possible to filter out unneeded values with a WHERE clause, that should be used.</p>
+
+<ul>
+<li>Use SELECT statements with LIMIT keyword if you need to return only the first n rows.</li>
+</ul>
+
+
+<p>Makes sense, I do this quite often when I am testing to make sure my query is running as expected. Usually used to run join on a subset before running it on the whole data set.</p>
+
+<ul>
+<li>Try to use UNION ALL statement stead of UNION.</li>
+</ul>
+
+
+<p>UNION ALL does not look for duplicates while UNION does look for duplicates whether they exist or not.</p>
+
+<hr />
+
+<p>I will add more SQL efficiency tips as I come across them!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Javascript/Node Build System for Sublime]]></title>

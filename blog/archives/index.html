@@ -9,10 +9,10 @@
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="Blog Archive 2013 Javascript/Node Build System for Sublime
-Aug 18 2013 Passing Arguments
-Aug 18 2013 Markdown Reference
-Aug 18 2013 Removing All Pip &hellip;">
+  <meta name="description" content="Blog Archive 2013 My OSX Setup
+Aug 18 2013 Efficient SQL (Custom)
+Aug 18 2013 Javascript/Node Build System for Sublime
+Aug 18 2013 Passing Arguments &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -95,6 +95,26 @@ Aug 18 2013 Removing All Pip &hellip;">
 
 <article>
   
+<h1><a href="/blog/2013/08/18/my-osx-setup/">My OSX Setup</a></h1>
+<time datetime="2013-08-18T18:58:00-05:00" pubdate><span class='month'>Aug</span> <span class='day'>18</span> <span class='year'>2013</span></time>
+
+
+</article>
+
+
+
+<article>
+  
+<h1><a href="/blog/2013/08/18/efficient-sql/">Efficient SQL (Custom)</a></h1>
+<time datetime="2013-08-18T18:37:00-05:00" pubdate><span class='month'>Aug</span> <span class='day'>18</span> <span class='year'>2013</span></time>
+
+
+</article>
+
+
+
+<article>
+  
 <h1><a href="/blog/2013/08/18/js-slash-node-build-system-for-sublime/">Javascript/Node Build System for Sublime</a></h1>
 <time datetime="2013-08-18T16:56:00-05:00" pubdate><span class='month'>Aug</span> <span class='day'>18</span> <span class='year'>2013</span></time>
 
@@ -155,6 +175,14 @@ Aug 18 2013 Removing All Pip &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/18/my-osx-setup/">My OSX Setup</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/18/efficient-sql/">Efficient SQL (Custom)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/18/js-slash-node-build-system-for-sublime/">Javascript/Node Build System for Sublime</a>
       </li>
     
@@ -166,15 +194,36 @@ Aug 18 2013 Removing All Pip &hellip;">
         <a href="/blog/2013/08/18/markdown-reference/">Markdown Reference</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/08/17/removing-pip-packages/">Removing All Pip Packages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/17/first-post/">First Post</a>
-      </li>
-    
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/darkzeroman">@darkzeroman</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'darkzeroman',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 

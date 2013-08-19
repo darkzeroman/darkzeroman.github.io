@@ -155,7 +155,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime/" data-via="" data-counturl="http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime/" >Tweet</a>
   
   
   
@@ -166,6 +166,8 @@
       
         <a class="basic-alignment left" href="/blog/2013/08/18/passing-arguments/" title="Previous Post: Passing Arguments">&laquo; Passing Arguments</a>
       
+      
+        <a class="basic-alignment right" href="/blog/2013/08/18/efficient-sql/" title="Next Post: Efficient SQL (Custom)">Efficient SQL (Custom) &raquo;</a>
       
     </p>
   </footer>
@@ -180,6 +182,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/18/my-osx-setup/">My OSX Setup</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/18/efficient-sql/">Efficient SQL (Custom)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/18/js-slash-node-build-system-for-sublime/">Javascript/Node Build System for Sublime</a>
       </li>
     
@@ -191,15 +201,36 @@
         <a href="/blog/2013/08/18/markdown-reference/">Markdown Reference</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/08/17/removing-pip-packages/">Removing All Pip Packages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/17/first-post/">First Post</a>
-      </li>
-    
   </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/darkzeroman">@darkzeroman</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'darkzeroman',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
 
