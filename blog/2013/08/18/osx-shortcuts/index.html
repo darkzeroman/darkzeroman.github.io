@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My OSX Setup - A Place For Me To Leave My Thoughts</title>
+  <title>OSX Shortcuts - A Place For Me To Leave My Thoughts</title>
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="My brother has just started college and I recommended that he should get a Macbook Pro because I have had a blast using one for the past one year. &hellip;">
+  <meta name="description" content="I started to really use keyboard shortcuts when I started to use VIM. But what I dislike is that I can&rsquo;t HJKL in another applications, which is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/18/my-osx-setup">
+  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/18/osx-shortcuts">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A Place For Me To Leave My Thoughts" type="application/atom+xml">
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">My OSX Setup</h1>
+      <h1 class="entry-title">OSX Shortcuts</h1>
     
     
       <p class="meta">
@@ -96,46 +96,89 @@
   
 
 
-<time datetime="2013-08-18T18:58:00-05:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-08-18T19:04:00-05:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>My brother has just started college and I recommended that he should get a Macbook Pro because I have had a blast using one for the past one year. Also, he is interested in Computer Science and said he would like tips to know what to install for a good workstation setup.</p>
+<div class="entry-content"><p>I started to really use keyboard shortcuts when I started to use VIM. But what I dislike is that I can&rsquo;t HJKL in another applications, which is tough to get over because I spent so much time learning I couldn&rsquo;t use them in other applications!</p>
 
-<p>Before an internship I primarily used a Linux box and was comfortable using the command line, but always had trouble with various things such as sound, turning on after a sleep, and performance issues on my previous Linux laptop. This might have been due to the fact that the machine wasn&rsquo;t the highest quality machine and might not have been a good fit for Ubuntu.</p>
+<p>There are ways to use VIM keybindings in other applications, such as Vimperator, Vimium, Eclim, etc. But the hardest is that getting VIM keybindings to function means that there needs to be support for the insert, normal modes (<a href="http://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/Modes">More here</a>) to work correctly. And this is difficult to do in an effective manner!</p>
 
-<p>As I was making the list I figured it would be good to put up the list online so others can look at my setup and decide whether they want to use any of the tools I do.</p>
+<p>So that&rsquo;s why the Emacs keybindings make sense! Instead of having to try to mess around with modes, I can just use Control + Key to complete an operation. The bad part about using Control is that it is on the bottom left part of a Macbook keyboard, but I do remember that people always mentioned to me that they would remap the Caps Lock key to Control.</p>
 
-<h3>General OSX Desktop Tools:</h3>
+<p>I am sad that I can&rsquo;t switch into ALL CAPS mode (which is good to have when I&rsquo;m trying to write proper SQL), but being able to control the cursor without having to move my hands to the arrow keys is something I am willing to give up. The one bad part is that these keyboards shortcuts are not always available in all programs, but it works in terminal, Chrome toolbar, and text editors! Which is really covers most of the stuff I do anyway!</p>
 
-<ul>
-<li>Toggl</li>
-<li>Yoink</li>
-<li>Bartender</li>
-<li>Flux</li>
-<li>gfxCardStatus</li>
-<li>Alfred</li>
-<li>TotalFinder</li>
-<li>Spectacle</li>
-<li>KeyRemap4Macbook</li>
-</ul>
+<p>The following is a summary of the keyboard shortcuts I find most important to know.</p>
+
+<h2>Movement</h2>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center"> Keyboard Shortcut </th>
+<th align="center">   Command     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="center"> Control + A       </td>
+<td align="center"> Start of Line </td>
+</tr>
+<tr>
+<td></td>
+<td align="center"> Control + E       </td>
+<td align="center"> End of Line   </td>
+</tr>
+<tr>
+<td></td>
+<td align="center"> Control + P       </td>
+<td align="center"> Previous Line </td>
+</tr>
+<tr>
+<td></td>
+<td align="center"> Control + N       </td>
+<td align="center"> Next Line     </td>
+</tr>
+</tbody>
+</table>
 
 
-<h3>Development Tools</h3>
+<h2>Editing</h2>
 
-<ul>
-<li>MacVim</li>
-<li>Oh My Zsh</li>
-<li>DBeaver</li>
-<li>Sublime Text</li>
-<li>Iterm2</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th> Keyboard Shortcut </th>
+<th> Command </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td> Control + K       </td>
+<td> Delete From Cursor to End of Line </td>
+</tr>
+<tr>
+<td></td>
+<td> Control + H       </td>
+<td> Backspace </td>
+</tr>
+<tr>
+<td></td>
+<td> Control + D       </td>
+<td> Delete Next Character </td>
+</tr>
+</tbody>
+</table>
 
 
-<p>I have remapped the Caps Lock to Control and will have a post discussing how I have made my life better with remapping keys.</p>
+<p>Google around more to find out OSX keyboard shortcuts.</p>
 </div>
 
 
@@ -158,7 +201,7 @@
   
 
 
-<time datetime="2013-08-18T18:58:00-05:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-08-18T19:04:00-05:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
       
 
 
@@ -166,7 +209,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/18/my-osx-setup/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/18/my-osx-setup/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/18/osx-shortcuts/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/18/osx-shortcuts/" >Tweet</a>
   
   
   
@@ -175,10 +218,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/18/efficient-sql/" title="Previous Post: Efficient SQL (Custom)">&laquo; Efficient SQL (Custom)</a>
+        <a class="basic-alignment left" href="/blog/2013/08/18/my-osx-setup/" title="Previous Post: My OSX Setup">&laquo; My OSX Setup</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/08/18/osx-shortcuts/" title="Next Post: OSX Shortcuts">OSX Shortcuts &raquo;</a>
       
     </p>
   </footer>

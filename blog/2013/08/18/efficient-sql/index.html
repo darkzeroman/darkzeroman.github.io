@@ -109,47 +109,45 @@
 
 <p>The following is a quick summary of link.</p>
 
-<hr />
-
-<h3>Tips to Speed Up Queries</h3>
+<h2>Tips to Speed Up Queries</h2>
 
 <ul>
-<li>Try to restrict the queries result set by using the WHERE clause.</li>
+<li><strong>Try to restrict the queries result set by using the WHERE clause.</strong></li>
 </ul>
 
 
 <p>This one seems obvious.</p>
 
 <ul>
-<li>Try to restrict the queries result st by returning only the particular columns from the table, not all the table&rsquo;s columns.</li>
+<li><strong>Try to restrict the queries result st by returning only the particular columns from the table, not all the table&rsquo;s columns.</strong></li>
 </ul>
 
 
 <p>Another one that seems obvious.</p>
 
 <ul>
-<li>If you need to return the total table&rsquo;s row count, use an alternative instead of <code>SELECT COUNT(*)</code> statement.</li>
+<li><strong>If you need to return the total table&rsquo;s row count, use an alternative instead of <code>SELECT COUNT(*)</code> statement.</strong></li>
 </ul>
 
 
 <p>This one is interesting because I didn&rsquo;t know there were alternatives, I usually do run the <code>SELECT COUNT(*)</code> statement! I will update how to get the table count in Postgres soon.</p>
 
 <ul>
-<li>Try to avoid the HAVING clause whenever possible.</li>
+<li><strong>Try to avoid the HAVING clause whenever possible.</strong></li>
 </ul>
 
 
 <p>This is an interesting one, I wouldn&rsquo;t think the HAVING clause would be that computationally expensive, but a good point is made that if it&rsquo;s possible to filter out unneeded values with a WHERE clause, that should be used.</p>
 
 <ul>
-<li>Use SELECT statements with LIMIT keyword if you need to return only the first n rows.</li>
+<li><strong>Use SELECT statements with LIMIT keyword if you need to return only the first n rows.</strong></li>
 </ul>
 
 
 <p>Makes sense, I do this quite often when I am testing to make sure my query is running as expected. Usually used to run join on a subset before running it on the whole data set.</p>
 
 <ul>
-<li>Try to use UNION ALL statement stead of UNION.</li>
+<li><strong>Try to use UNION ALL statement stead of UNION.</strong></li>
 </ul>
 
 
@@ -215,6 +213,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/18/osx-shortcuts/">OSX Shortcuts</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/18/my-osx-setup/">My OSX Setup</a>
       </li>
     
@@ -228,10 +230,6 @@
     
       <li class="post">
         <a href="/blog/2013/08/18/passing-arguments/">Passing Arguments</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/18/markdown-reference/">Markdown Reference</a>
       </li>
     
   </ul>

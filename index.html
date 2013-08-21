@@ -9,7 +9,7 @@
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="My brother has just started college and I recommended that he should get a Macbook Pro because I have had a blast using one for the past one year. &hellip;">
+  <meta name="description" content="I started to really use keyboard shortcuts when I started to use VIM. But what I dislike is that I can&rsquo;t HJKL in another applications, which is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,117 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/18/osx-shortcuts/">OSX Shortcuts</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-18T19:04:00-05:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I started to really use keyboard shortcuts when I started to use VIM. But what I dislike is that I can&rsquo;t HJKL in another applications, which is tough to get over because I spent so much time learning I couldn&rsquo;t use them in other applications!</p>
+
+<p>There are ways to use VIM keybindings in other applications, such as Vimperator, Vimium, Eclim, etc. But the hardest is that getting VIM keybindings to function means that there needs to be support for the insert, normal modes (<a href="http://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/Modes">More here</a>) to work correctly. And this is difficult to do in an effective manner!</p>
+
+<p>So that&rsquo;s why the Emacs keybindings make sense! Instead of having to try to mess around with modes, I can just use Control + Key to complete an operation. The bad part about using Control is that it is on the bottom left part of a Macbook keyboard, but I do remember that people always mentioned to me that they would remap the Caps Lock key to Control.</p>
+
+<p>I am sad that I can&rsquo;t switch into ALL CAPS mode (which is good to have when I&rsquo;m trying to write proper SQL), but being able to control the cursor without having to move my hands to the arrow keys is something I am willing to give up. The one bad part is that these keyboards shortcuts are not always available in all programs, but it works in terminal, Chrome toolbar, and text editors! Which is really covers most of the stuff I do anyway!</p>
+
+<p>The following is a summary of the keyboard shortcuts I find most important to know.</p>
+
+<h2>Movement</h2>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center"> Keyboard Shortcut </th>
+<th align="center">   Command     </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td align="center"> Control + A       </td>
+<td align="center"> Start of Line </td>
+</tr>
+<tr>
+<td></td>
+<td align="center"> Control + E       </td>
+<td align="center"> End of Line   </td>
+</tr>
+<tr>
+<td></td>
+<td align="center"> Control + P       </td>
+<td align="center"> Previous Line </td>
+</tr>
+<tr>
+<td></td>
+<td align="center"> Control + N       </td>
+<td align="center"> Next Line     </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Editing</h2>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th> Keyboard Shortcut </th>
+<th> Command </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td> Control + K       </td>
+<td> Delete From Cursor to End of Line </td>
+</tr>
+<tr>
+<td></td>
+<td> Control + H       </td>
+<td> Backspace </td>
+</tr>
+<tr>
+<td></td>
+<td> Control + D       </td>
+<td> Delete Next Character </td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Google around more to find out OSX keyboard shortcuts.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -180,47 +291,45 @@
 
 <p>The following is a quick summary of link.</p>
 
-<hr />
-
-<h3>Tips to Speed Up Queries</h3>
+<h2>Tips to Speed Up Queries</h2>
 
 <ul>
-<li>Try to restrict the queries result set by using the WHERE clause.</li>
+<li><strong>Try to restrict the queries result set by using the WHERE clause.</strong></li>
 </ul>
 
 
 <p>This one seems obvious.</p>
 
 <ul>
-<li>Try to restrict the queries result st by returning only the particular columns from the table, not all the table&rsquo;s columns.</li>
+<li><strong>Try to restrict the queries result st by returning only the particular columns from the table, not all the table&rsquo;s columns.</strong></li>
 </ul>
 
 
 <p>Another one that seems obvious.</p>
 
 <ul>
-<li>If you need to return the total table&rsquo;s row count, use an alternative instead of <code>SELECT COUNT(*)</code> statement.</li>
+<li><strong>If you need to return the total table&rsquo;s row count, use an alternative instead of <code>SELECT COUNT(*)</code> statement.</strong></li>
 </ul>
 
 
 <p>This one is interesting because I didn&rsquo;t know there were alternatives, I usually do run the <code>SELECT COUNT(*)</code> statement! I will update how to get the table count in Postgres soon.</p>
 
 <ul>
-<li>Try to avoid the HAVING clause whenever possible.</li>
+<li><strong>Try to avoid the HAVING clause whenever possible.</strong></li>
 </ul>
 
 
 <p>This is an interesting one, I wouldn&rsquo;t think the HAVING clause would be that computationally expensive, but a good point is made that if it&rsquo;s possible to filter out unneeded values with a WHERE clause, that should be used.</p>
 
 <ul>
-<li>Use SELECT statements with LIMIT keyword if you need to return only the first n rows.</li>
+<li><strong>Use SELECT statements with LIMIT keyword if you need to return only the first n rows.</strong></li>
 </ul>
 
 
 <p>Makes sense, I do this quite often when I am testing to make sure my query is running as expected. Usually used to run join on a subset before running it on the whole data set.</p>
 
 <ul>
-<li>Try to use UNION ALL statement stead of UNION.</li>
+<li><strong>Try to use UNION ALL statement stead of UNION.</strong></li>
 </ul>
 
 
@@ -560,6 +669,10 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/18/osx-shortcuts/">OSX Shortcuts</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/18/my-osx-setup/">My OSX Setup</a>
       </li>
     
@@ -573,10 +686,6 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
     
       <li class="post">
         <a href="/blog/2013/08/18/passing-arguments/">Passing Arguments</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/18/markdown-reference/">Markdown Reference</a>
       </li>
     
   </ul>
