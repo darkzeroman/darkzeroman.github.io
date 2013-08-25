@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-08-25T09:38:45-05:00</updated>
+  <updated>2013-08-25T11:01:39-05:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -12,6 +12,111 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Unix's words]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/08/25/unixs-words/"/>
+    <updated>2013-08-25T10:26:00-05:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/08/25/unixs-words</id>
+    <content type="html"><![CDATA[<p>Have you ever wanted to:
+* check if a series of strings you have is a word?
+* create a text file with random words in it?
+* check for valid words using a pattern?</p>
+
+<p>Well you should check out the file available on Unix systems (OSX included!): <code>/usr/share/dict/words</code>.</p>
+
+<h2>What is it?</h2>
+
+<p>The files in <code>/usr/share/dict</code> are large lists of words that can be used for a variety of things. One thing to note is that there are different types of documents in the folder, there are lists for proper names, compound words, and connectives. The differences are explained in the following.</p>
+
+<p><a href="http://netninja.com/2012/05/24/dictionary-files-are-they-all-created-equal/">Comparison of Dictionary Files on Various OSes</a></p>
+
+<h2>Okay, How Do I Use It?</h2>
+
+<p>Well the first thing to remember is that <code>words</code> is a text file, so grep can be used to search for words.</p>
+
+<p>An example from <a href="http://en.wikipedia.org/wiki/Words_(Unix">Wikipedia</a>) is:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>egrep -i "^[^aeiouy']{3}$" /usr/share/dict/words</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This finds all three letter words that don&rsquo;t have the vowels (aeiouy).</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Unix Utilities: Uniq]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/08/25/unix-tools-uniq/"/>
+    <updated>2013-08-25T10:00:00-05:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/08/25/unix-tools-uniq</id>
+    <content type="html"><![CDATA[<p>Only up until a little while ago did I realize that there are UNIX tools which can help with text searching/processing. This post will cover the <code>uniq</code> tool and a few good use cases.</p>
+
+<h2>Background Information and How To Use Uniq</h2>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>uniq [OPTION] ... [INPUT [OUTPUT]]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Notice that the options have to come <em>before</em> the input.</p>
+
+<h2>Uniq Options</h2>
+
+<p>This following are the options available for the uniq utility. There are short and long versions, so use whichever one you feel comfortable with. It&rsquo;s remember to note that two dashes is in front of words while one dash is meant for one character options.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-c, --count</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Prefix lines by the number of occurrences.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-d, --repeated</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-D, --all-repeated[=delimit-method] print all duplicate lines
+</span><span class='line'>delimit-method={none(default),prepend,separate} Delimiting  is
+</span><span class='line'>done with blank lines.</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-f, --skip-fields=N</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-i, --ignore-case</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-s, --skip-chars=N</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-u, --unique</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-w, --check-chars=N</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&ldquo;A field is a run of whitespace, then non-whitespace characters. Fields are skipped before chars.&rdquo;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[OSX Shortcuts]]></title>
@@ -26,9 +131,8 @@
 
 <p>I am sad that I can&rsquo;t switch into ALL CAPS mode (which is good to have when I&rsquo;m trying to write proper SQL), but being able to control the cursor without having to move my hands to the arrow keys is something I am willing to give up. The one bad part is that these keyboards shortcuts are not always available in all programs, but it works in terminal, Chrome toolbar, and text editors! Which is really covers most of the stuff I do anyway!</p>
 
-<p>The following is a summary of the keyboard shortcuts I find most important to know.</p>
-
-<p><em>Cursor is the small box or vertical line that shows where you are currently typing.</em></p>
+<p>The following is a summary of the keyboard shortcuts I find most important to know.
+<em>Cursor is the small box or vertical line that shows where you are currently typing.</em></p>
 
 <h2>Movement</h2>
 
@@ -71,6 +175,11 @@
 <td align="center"> Control + B       </td>
 <td align="center"> Move Cursor Backward</td>
 </tr>
+<tr>
+<td></td>
+<td align="center"> Control + V       </td>
+<td align="center"> Scroll Down</td>
+</tr>
 </tbody>
 </table>
 
@@ -89,7 +198,12 @@
 <tr>
 <td></td>
 <td> Control + K       </td>
-<td align="center"> Delete From Cursor to End of Line </td>
+<td align="center"> Cut From Cursor to End of Line (Cut)</td>
+</tr>
+<tr>
+<td></td>
+<td> Control + Y       </td>
+<td align="center"> Paste The Text Removed By Control + K </td>
 </tr>
 <tr>
 <td></td>
@@ -99,10 +213,31 @@
 <tr>
 <td></td>
 <td> Control + D       </td>
-<td align="center"> Delete Next Character </td>
+<td align="center"> Forward Backspace</td>
+</tr>
+<tr>
+<td></td>
+<td> Control + T       </td>
+<td align="center"> Transpose letters *</td>
+</tr>
+<tr>
+<td></td>
+<td> Control + O       </td>
+<td align="center"> Insert Line Break </td>
 </tr>
 </tbody>
 </table>
+
+
+<br/>
+
+
+<p>* If the cursor is:</p>
+
+<ul>
+<li>between two letters, the two letters will be switched.</li>
+<li>is in a white space between two words, the two words will be switched.</li>
+</ul>
 
 
 <hr />

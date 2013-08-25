@@ -5,12 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Markdown Reference - A Place For Me To Leave My Thoughts</title>
+  <title>Unix's words - A Place For Me To Leave My Thoughts</title>
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="What is Markdown good for?
-Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is &hellip;">
+  <meta name="description" content="Have you ever wanted to:
+* check if a series of strings you have is a word?
+* create a text file with random words in it?
+* check for valid words &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +21,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/18/markdown-reference">
+  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/25/unixs-words">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A Place For Me To Leave My Thoughts" type="application/atom+xml">
@@ -81,7 +83,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   
   <header>
     
-      <h1 class="entry-title">Markdown Reference</h1>
+      <h1 class="entry-title">Unix's Words</h1>
     
     
       <p class="meta">
@@ -97,91 +99,37 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   
 
 
-<time datetime="2013-08-18T12:39:00-05:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-08-25T10:26:00-05:00" pubdate data-updated="true">Aug 25<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>What is Markdown good for?
-Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is converted into valid HTML. Some examples are GitHub Repository README and how I write these blog posts.</p>
+<div class="entry-content"><p>Have you ever wanted to:
+* check if a series of strings you have is a word?
+* create a text file with random words in it?
+* check for valid words using a pattern?</p>
 
-<p>The following is a quick overview of the most common Markdown syntax.</p>
+<p>Well you should check out the file available on Unix systems (OSX included!): <code>/usr/share/dict/words</code>.</p>
 
-<h2>Headers</h2>
+<h2>What is it?</h2>
 
-<p>  <code># Level one header</code></p>
+<p>The files in <code>/usr/share/dict</code> are large lists of words that can be used for a variety of things. One thing to note is that there are different types of documents in the folder, there are lists for proper names, compound words, and connectives. The differences are explained in the following.</p>
 
-<p>  <code>## Level two header</code></p>
+<p><a href="http://netninja.com/2012/05/24/dictionary-files-are-they-all-created-equal/">Comparison of Dictionary Files on Various OSes</a></p>
 
-<p>  <code>### Level three header</code></p>
+<h2>Okay, How Do I Use It?</h2>
 
-<p>  &hellip; Up to six hashes are supported</p>
+<p>Well the first thing to remember is that <code>words</code> is a text file, so grep can be used to search for words.</p>
 
-<p>I would show an example, but it doesn&rsquo;t work well because I&rsquo;m already using Markdown for this blog post!</p>
-
-<h2>Links</h2>
-
-<p>  <code>[This is a link](http://www.darkzeroman.github.io)</code></p>
-
-<p>  <a href="http://www.darkzeroman.github.io">This is a link</a></p>
-
-<h2>Lists</h2>
-
-<h3>Unordered Lists</h3>
-
-<p>Use any of the following: <code>*, +, -</code></p>
+<p>An example from <a href="http://en.wikipedia.org/wiki/Words_(Unix">Wikipedia</a>) is:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>* Item 1
-</span><span class='line'>* Item 2
-</span><span class='line'>* Item 3</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>egrep -i "^[^aeiouy']{3}$" /usr/share/dict/words</span></code></pre></td></tr></table></div></figure>
 
 
-<ul>
-<li>This</li>
-<li>is</li>
-<li>a list</li>
-</ul>
-
-
-<h3>Ordered Lists</h3>
-
-<p>Ordered lists use number followed by period.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>1. with
-</span><span class='line'>2. numbers</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li>with</li>
-<li>numbers</li>
-</ol>
-
-
-<h2>Formatting/Emphasis</h2>
-
-<p>  <code>_italic_ or *italic*</code></p>
-
-<p>  <em>italic</em></p>
-
-<p>  <code>__bold__ or **bold**</code></p>
-
-<p>  <strong>bold</strong></p>
-
-<hr />
-
-<h2>More Resources:</h2>
-
-<ul>
-<li><a href="http://daringfireball.net/projects/markdown/syntax">Full Markdown Syntax Document</a></li>
-</ul>
-
+<p>This finds all three letter words that don&rsquo;t have the vowels (aeiouy).</p>
 </div>
 
 
@@ -204,7 +152,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   
 
 
-<time datetime="2013-08-18T12:39:00-05:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-08-25T10:26:00-05:00" pubdate data-updated="true">Aug 25<span>th</span>, 2013</time>
       
 
 
@@ -212,7 +160,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/18/markdown-reference/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/18/markdown-reference/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/25/unixs-words/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/25/unixs-words/" >Tweet</a>
   
   
   
@@ -221,10 +169,8 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/17/removing-pip-packages/" title="Previous Post: Removing All Pip Packages">&laquo; Removing All Pip Packages</a>
+        <a class="basic-alignment left" href="/blog/2013/08/25/unix-tools-uniq/" title="Previous Post: Unix Utilities: Uniq">&laquo; Unix Utilities: Uniq</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/08/18/js-slash-node-build-system-for-sublime/" title="Next Post: Javascript/Node Build System for Sublime">Javascript/Node Build System for Sublime &raquo;</a>
       
     </p>
   </footer>

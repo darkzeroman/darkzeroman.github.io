@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Markdown Reference - A Place For Me To Leave My Thoughts</title>
+  <title>Unix Utilities: Uniq - A Place For Me To Leave My Thoughts</title>
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="What is Markdown good for?
-Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is &hellip;">
+  <meta name="description" content="Only up until a little while ago did I realize that there are UNIX tools which can help with text searching/processing. This post will cover the uniq &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/18/markdown-reference">
+  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/25/unix-tools-uniq">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A Place For Me To Leave My Thoughts" type="application/atom+xml">
@@ -81,7 +80,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   
   <header>
     
-      <h1 class="entry-title">Markdown Reference</h1>
+      <h1 class="entry-title">Unix Utilities: Uniq</h1>
     
     
       <p class="meta">
@@ -97,91 +96,78 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   
 
 
-<time datetime="2013-08-18T12:39:00-05:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-08-25T10:00:00-05:00" pubdate data-updated="true">Aug 25<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>What is Markdown good for?
-Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is converted into valid HTML. Some examples are GitHub Repository README and how I write these blog posts.</p>
+<div class="entry-content"><p>Only up until a little while ago did I realize that there are UNIX tools which can help with text searching/processing. This post will cover the <code>uniq</code> tool and a few good use cases.</p>
 
-<p>The following is a quick overview of the most common Markdown syntax.</p>
+<h2>Background Information and How To Use Uniq</h2>
 
-<h2>Headers</h2>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>uniq [OPTION] ... [INPUT [OUTPUT]]</span></code></pre></td></tr></table></div></figure>
 
-<p>  <code># Level one header</code></p>
 
-<p>  <code>## Level two header</code></p>
+<p>Notice that the options have to come <em>before</em> the input.</p>
 
-<p>  <code>### Level three header</code></p>
+<h2>Uniq Options</h2>
 
-<p>  &hellip; Up to six hashes are supported</p>
+<p>This following are the options available for the uniq utility. There are short and long versions, so use whichever one you feel comfortable with. It&rsquo;s remember to note that two dashes is in front of words while one dash is meant for one character options.</p>
 
-<p>I would show an example, but it doesn&rsquo;t work well because I&rsquo;m already using Markdown for this blog post!</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-c, --count</span></code></pre></td></tr></table></div></figure>
 
-<h2>Links</h2>
 
-<p>  <code>[This is a link](http://www.darkzeroman.github.io)</code></p>
+<p>Prefix lines by the number of occurrences.</p>
 
-<p>  <a href="http://www.darkzeroman.github.io">This is a link</a></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-d, --repeated</span></code></pre></td></tr></table></div></figure>
 
-<h2>Lists</h2>
 
-<h3>Unordered Lists</h3>
 
-<p>Use any of the following: <code>*, +, -</code></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>* Item 1
-</span><span class='line'>* Item 2
-</span><span class='line'>* Item 3</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-D, --all-repeated[=delimit-method] print all duplicate lines
+</span><span class='line'>delimit-method={none(default),prepend,separate} Delimiting  is
+</span><span class='line'>done with blank lines.</span></code></pre></td></tr></table></div></figure>
 
 
-<ul>
-<li>This</li>
-<li>is</li>
-<li>a list</li>
-</ul>
 
-
-<h3>Ordered Lists</h3>
-
-<p>Ordered lists use number followed by period.</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>1. with
-</span><span class='line'>2. numbers</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-f, --skip-fields=N</span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
-<li>with</li>
-<li>numbers</li>
-</ol>
 
 
-<h2>Formatting/Emphasis</h2>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-i, --ignore-case</span></code></pre></td></tr></table></div></figure>
 
-<p>  <code>_italic_ or *italic*</code></p>
 
-<p>  <em>italic</em></p>
 
-<p>  <code>__bold__ or **bold**</code></p>
 
-<p>  <strong>bold</strong></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-s, --skip-chars=N</span></code></pre></td></tr></table></div></figure>
 
-<hr />
 
-<h2>More Resources:</h2>
 
-<ul>
-<li><a href="http://daringfireball.net/projects/markdown/syntax">Full Markdown Syntax Document</a></li>
-</ul>
 
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-u, --unique</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>-w, --check-chars=N</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&ldquo;A field is a run of whitespace, then non-whitespace characters. Fields are skipped before chars.&rdquo;</p>
 </div>
 
 
@@ -204,7 +190,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   
 
 
-<time datetime="2013-08-18T12:39:00-05:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-08-25T10:00:00-05:00" pubdate data-updated="true">Aug 25<span>th</span>, 2013</time>
       
 
 
@@ -212,7 +198,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/18/markdown-reference/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/18/markdown-reference/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/25/unix-tools-uniq/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/25/unix-tools-uniq/" >Tweet</a>
   
   
   
@@ -221,10 +207,10 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/17/removing-pip-packages/" title="Previous Post: Removing All Pip Packages">&laquo; Removing All Pip Packages</a>
+        <a class="basic-alignment left" href="/blog/2013/08/18/osx-shortcuts/" title="Previous Post: OSX Shortcuts">&laquo; OSX Shortcuts</a>
       
       
-        <a class="basic-alignment right" href="/blog/2013/08/18/js-slash-node-build-system-for-sublime/" title="Next Post: Javascript/Node Build System for Sublime">Javascript/Node Build System for Sublime &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/08/25/unixs-words/" title="Next Post: Unix's words">Unix's words &raquo;</a>
       
     </p>
   </footer>
