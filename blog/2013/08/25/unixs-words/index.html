@@ -9,10 +9,9 @@
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="Have you ever wanted to:
-* check if a series of strings you have is a word?
-* create a text file with random words in it?
-* check for valid words &hellip;">
+  <meta name="description" content="Have you ever wanted to: check if a series of strings you have is a word?
+create a text file with random words in it?
+check for valid words using a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,10 +105,14 @@
   </header>
 
 
-<div class="entry-content"><p>Have you ever wanted to:
-* check if a series of strings you have is a word?
-* create a text file with random words in it?
-* check for valid words using a pattern?</p>
+<div class="entry-content"><p>Have you ever wanted to:</p>
+
+<ul>
+<li>check if a series of strings you have is a word?</li>
+<li>create a text file with random words in it?</li>
+<li>check for valid words using a pattern?</li>
+</ul>
+
 
 <p>Well you should check out the file available on Unix systems (OSX included!): <code>/usr/share/dict/words</code>.</p>
 
@@ -123,13 +126,16 @@
 
 <p>Well the first thing to remember is that <code>words</code> is a text file, so grep can be used to search for words.</p>
 
-<p>An example from <a href="http://en.wikipedia.org/wiki/Words_(Unix">Wikipedia</a>) is:</p>
+<p>An example from <a href="http://en.wikipedia.org/wiki/Words_(Unix)">Wikipedia</a> is:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>egrep -i "^[^aeiouy']{3}$" /usr/share/dict/words</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>egrep -i <span class="s2">&quot;^[^aeiouy&#39;]{3}$&quot;</span> /usr/share/dict/words
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p>This finds all three letter words that don&rsquo;t have the vowels (aeiouy).</p>
+<p>This finds all three letter words that don&rsquo;t have the vowels (aeiouy). If you need more ideas on how do accomplish something specific like this, be sure to look for Regex patterns.</p>
+
+<h2></h2>
 </div>
 
 
@@ -193,15 +199,15 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2013/08/18/what-are-language-managers/">What Are Language Managers?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/18/osx-shortcuts/">OSX Shortcuts</a>
       </li>
     
       <li class="post">
         <a href="/blog/2013/08/18/my-osx-setup/">My OSX Setup</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/08/18/efficient-sql/">Efficient SQL (Custom)</a>
       </li>
     
   </ul>

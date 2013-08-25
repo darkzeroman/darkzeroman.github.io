@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-08-25T11:01:39-05:00</updated>
+  <updated>2013-08-25T11:25:28-05:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -18,10 +18,14 @@
     <link href="http://darkzeroman.github.io/blog/2013/08/25/unixs-words/"/>
     <updated>2013-08-25T10:26:00-05:00</updated>
     <id>http://darkzeroman.github.io/blog/2013/08/25/unixs-words</id>
-    <content type="html"><![CDATA[<p>Have you ever wanted to:
-* check if a series of strings you have is a word?
-* create a text file with random words in it?
-* check for valid words using a pattern?</p>
+    <content type="html"><![CDATA[<p>Have you ever wanted to:</p>
+
+<ul>
+<li>check if a series of strings you have is a word?</li>
+<li>create a text file with random words in it?</li>
+<li>check for valid words using a pattern?</li>
+</ul>
+
 
 <p>Well you should check out the file available on Unix systems (OSX included!): <code>/usr/share/dict/words</code>.</p>
 
@@ -35,13 +39,16 @@
 
 <p>Well the first thing to remember is that <code>words</code> is a text file, so grep can be used to search for words.</p>
 
-<p>An example from <a href="http://en.wikipedia.org/wiki/Words_(Unix">Wikipedia</a>) is:</p>
+<p>An example from <a href="http://en.wikipedia.org/wiki/Words_(Unix)">Wikipedia</a> is:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>egrep -i "^[^aeiouy']{3}$" /usr/share/dict/words</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>egrep -i <span class="s2">&quot;^[^aeiouy&#39;]{3}$&quot;</span> /usr/share/dict/words
+</span></code></pre></td></tr></table></div></figure>
 
 
-<p>This finds all three letter words that don&rsquo;t have the vowels (aeiouy).</p>
+<p>This finds all three letter words that don&rsquo;t have the vowels (aeiouy). If you need more ideas on how do accomplish something specific like this, be sure to look for Regex patterns.</p>
+
+<h2></h2>
 ]]></content>
   </entry>
   
@@ -115,6 +122,38 @@
 
 
 <p>&ldquo;A field is a run of whitespace, then non-whitespace characters. Fields are skipped before chars.&rdquo;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What Are Language Managers?]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/08/18/what-are-language-managers/"/>
+    <updated>2013-08-18T19:07:00-05:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/08/18/what-are-language-managers</id>
+    <content type="html"><![CDATA[<p>Language managers are good for:</p>
+
+<ul>
+<li>Managing different types of versions</li>
+<li>Being able to quickly change versoinf for different programs</li>
+</ul>
+
+
+<p>Bad:</p>
+
+<ul>
+<li>Hard, complicated</li>
+<li>Need to manage different versions</li>
+</ul>
+
+
+<p>Some version managers are:</p>
+
+<ul>
+<li>Ruby: RVM, RbEnv</li>
+<li>Python: VirtualEnv, PyEnv</li>
+<li>Java: Can be set <a href="http://vietpad.sourceforge.net/javaonlinux.html">link</a></li>
+</ul>
+
 ]]></content>
   </entry>
   
@@ -375,6 +414,41 @@
 <p>It might be necessary to adjust the path to node for your own setup.</p>
 
 <p>Now save, restart Sublime Text, and you should be able to build Javascript with Sublime Text!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Passing Arguments]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/08/18/passing-arguments/"/>
+    <updated>2013-08-18T16:13:00-05:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/08/18/passing-arguments</id>
+    <content type="html"><![CDATA[<h1>Varying Arguments in Python, Ruby, Javascript</h1>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">required_arg</span><span class="p">,</span> <span class="o">*</span><span class="n">optional_args</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">required_arg</span><span class="si">}</span><span class="s2"> says: </span><span class="si">#{</span><span class="n">optional_args</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>What&rsquo;s going on here?
+The asterisk takes any additional arguments after the first required argument. So if you were to do the following:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">method</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;how&quot;</span><span class="p">,</span> <span class="s2">&quot;are&quot;</span><span class="p">,</span> <span class="s2">&quot;you&quot;</span><span class="p">)</span> <span class="c1"># =&gt; &quot;John says: hello how are you&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The optional arguments are well.. optional, they aren&rsquo;t required. It&rsquo;s possible to call the method as so:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">method</span><span class="p">(</span><span class="s2">&quot;Paul&quot;</span><span class="p">)</span> <span class="c1"># =&gt; &quot;Paul says:&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>One thing to remember is that in Ruby it&rsquo;s possible to pass a hash as an argument.</p>
 ]]></content>
   </entry>
   
