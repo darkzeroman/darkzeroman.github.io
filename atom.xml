@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-08-20T21:12:02-05:00</updated>
+  <updated>2013-08-25T09:38:45-05:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -27,6 +27,8 @@
 <p>I am sad that I can&rsquo;t switch into ALL CAPS mode (which is good to have when I&rsquo;m trying to write proper SQL), but being able to control the cursor without having to move my hands to the arrow keys is something I am willing to give up. The one bad part is that these keyboards shortcuts are not always available in all programs, but it works in terminal, Chrome toolbar, and text editors! Which is really covers most of the stuff I do anyway!</p>
 
 <p>The following is a summary of the keyboard shortcuts I find most important to know.</p>
+
+<p><em>Cursor is the small box or vertical line that shows where you are currently typing.</em></p>
 
 <h2>Movement</h2>
 
@@ -59,6 +61,16 @@
 <td align="center"> Control + N       </td>
 <td align="center"> Next Line     </td>
 </tr>
+<tr>
+<td></td>
+<td align="center"> Control + F       </td>
+<td align="center"> Move Cursor Forward</td>
+</tr>
+<tr>
+<td></td>
+<td align="center"> Control + B       </td>
+<td align="center"> Move Cursor Backward</td>
+</tr>
 </tbody>
 </table>
 
@@ -70,28 +82,30 @@
 <tr>
 <th></th>
 <th> Keyboard Shortcut </th>
-<th> Command </th>
+<th align="center"> Command </th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td></td>
 <td> Control + K       </td>
-<td> Delete From Cursor to End of Line </td>
+<td align="center"> Delete From Cursor to End of Line </td>
 </tr>
 <tr>
 <td></td>
 <td> Control + H       </td>
-<td> Backspace </td>
+<td align="center"> Backspace </td>
 </tr>
 <tr>
 <td></td>
 <td> Control + D       </td>
-<td> Delete Next Character </td>
+<td align="center"> Delete Next Character </td>
 </tr>
 </tbody>
 </table>
 
+
+<hr />
 
 <p>Google around more to find out OSX keyboard shortcuts.</p>
 ]]></content>
@@ -226,41 +240,6 @@
 <p>It might be necessary to adjust the path to node for your own setup.</p>
 
 <p>Now save, restart Sublime Text, and you should be able to build Javascript with Sublime Text!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Passing Arguments]]></title>
-    <link href="http://darkzeroman.github.io/blog/2013/08/18/passing-arguments/"/>
-    <updated>2013-08-18T16:13:00-05:00</updated>
-    <id>http://darkzeroman.github.io/blog/2013/08/18/passing-arguments</id>
-    <content type="html"><![CDATA[<h1>Varying Arguments in Python, Ruby, Javascript</h1>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">method</span><span class="p">(</span><span class="n">required_arg</span><span class="p">,</span> <span class="o">*</span><span class="n">optional_args</span><span class="p">)</span>
-</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">required_arg</span><span class="si">}</span><span class="s2"> says: </span><span class="si">#{</span><span class="n">optional_args</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>What&rsquo;s going on here?
-The asterisk takes any additional arguments after the first required argument. So if you were to do the following:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">method</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;how&quot;</span><span class="p">,</span> <span class="s2">&quot;are&quot;</span><span class="p">,</span> <span class="s2">&quot;you&quot;</span><span class="p">)</span> <span class="c1"># =&gt; &quot;John says: hello how are you&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The optional arguments are well.. optional, they aren&rsquo;t required. It&rsquo;s possible to call the method as so:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">method</span><span class="p">(</span><span class="s2">&quot;Paul&quot;</span><span class="p">)</span> <span class="c1"># =&gt; &quot;Paul says:&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>One thing to remember is that in Ruby it&rsquo;s possible to pass a hash as an argument.</p>
 ]]></content>
   </entry>
   
