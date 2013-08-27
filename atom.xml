@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-08-25T13:09:46-05:00</updated>
+  <updated>2013-08-26T23:37:00-04:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[OSX Shortcuts]]></title>
     <link href="http://darkzeroman.github.io/blog/2013/08/18/osx-shortcuts/"/>
-    <updated>2013-08-18T19:04:00-05:00</updated>
+    <updated>2013-08-18T19:04:00-04:00</updated>
     <id>http://darkzeroman.github.io/blog/2013/08/18/osx-shortcuts</id>
     <content type="html"><![CDATA[<p>I started to really use keyboard shortcuts when I started to use VIM. But what I dislike is that I can&rsquo;t HJKL in another applications, which is tough to get over because I spent so much time learning I couldn&rsquo;t use them in other applications!</p>
 
@@ -144,7 +144,7 @@
   <entry>
     <title type="html"><![CDATA[My OSX Setup]]></title>
     <link href="http://darkzeroman.github.io/blog/2013/08/18/my-osx-setup/"/>
-    <updated>2013-08-18T18:58:00-05:00</updated>
+    <updated>2013-08-18T18:58:00-04:00</updated>
     <id>http://darkzeroman.github.io/blog/2013/08/18/my-osx-setup</id>
     <content type="html"><![CDATA[<p>My brother has just started college and I recommended that he should get a Macbook Pro because I have had a blast using one for the past one year. Also, he is interested in Computer Science and said he would like tips to know what to install for a good workstation setup.</p>
 
@@ -185,7 +185,7 @@
   <entry>
     <title type="html"><![CDATA[Efficient SQL (Custom)]]></title>
     <link href="http://darkzeroman.github.io/blog/2013/08/18/efficient-sql/"/>
-    <updated>2013-08-18T18:37:00-05:00</updated>
+    <updated>2013-08-18T18:37:00-04:00</updated>
     <id>http://darkzeroman.github.io/blog/2013/08/18/efficient-sql</id>
     <content type="html"><![CDATA[<p>During one of my interviews I was asked whether I knew how to make SQL queries more efficient. At that point in time I had barely used SQL and had to ask the interviewer to move on to another subject.</p>
 
@@ -239,6 +239,8 @@
 
 <hr />
 
+<p>Something I&rsquo;ve learned about recently is Postgres&#8217; EXPLAIN and ANALYZE. More information is to be added soon.</p>
+
 <p>I will add more SQL efficiency tips as I come across them!</p>
 ]]></content>
   </entry>
@@ -246,7 +248,7 @@
   <entry>
     <title type="html"><![CDATA[Javascript/Node Build System for Sublime]]></title>
     <link href="http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime/"/>
-    <updated>2013-08-18T16:56:00-05:00</updated>
+    <updated>2013-08-18T16:56:00-04:00</updated>
     <id>http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime</id>
     <content type="html"><![CDATA[<p>To be able to build Javascript in Sublime Text, it&rsquo;s necessary to add a new Build System.</p>
 
@@ -276,7 +278,7 @@
   <entry>
     <title type="html"><![CDATA[Markdown Reference]]></title>
     <link href="http://darkzeroman.github.io/blog/2013/08/18/markdown-reference/"/>
-    <updated>2013-08-18T12:39:00-05:00</updated>
+    <updated>2013-08-18T12:39:00-04:00</updated>
     <id>http://darkzeroman.github.io/blog/2013/08/18/markdown-reference</id>
     <content type="html"><![CDATA[<p>What is Markdown good for?
 Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is converted into valid HTML. Some examples are GitHub Repository README and how I write these blog posts.</p>
@@ -362,7 +364,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   <entry>
     <title type="html"><![CDATA[Removing All Pip Packages]]></title>
     <link href="http://darkzeroman.github.io/blog/2013/08/17/removing-pip-packages/"/>
-    <updated>2013-08-17T16:42:00-05:00</updated>
+    <updated>2013-08-17T16:42:00-04:00</updated>
     <id>http://darkzeroman.github.io/blog/2013/08/17/removing-pip-packages</id>
     <content type="html"><![CDATA[<p>If you need to remove all pip packages currently installed.</p>
 
@@ -378,7 +380,7 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   <entry>
     <title type="html"><![CDATA[First Post]]></title>
     <link href="http://darkzeroman.github.io/blog/2013/08/17/first-post/"/>
-    <updated>2013-08-17T16:38:00-05:00</updated>
+    <updated>2013-08-17T16:38:00-04:00</updated>
     <id>http://darkzeroman.github.io/blog/2013/08/17/first-post</id>
     <content type="html"><![CDATA[<p>So I haven’t really ever used GitHub pages before, but I think this is an awesome way to get quick posts out without having to worry about wordpress and such. All I have to do is just edit a few files, run a few commands, and then push the source! How easy is that?</p>
 ]]></content>
