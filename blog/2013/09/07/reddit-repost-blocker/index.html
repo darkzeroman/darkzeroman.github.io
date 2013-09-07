@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My OSX Setup - A Place For Me To Leave My Thoughts</title>
+  <title>Reddit Repost Blocker - A Place For Me To Leave My Thoughts</title>
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="My brother has just started college and I recommended that he should get a Macbook Pro because I have had a blast using one for the past one year. &hellip;">
+  <meta name="description" content="A large issue with Reddit is that content is regularly submitted again and again (otherwise known as reposting). A vocal minority always posts &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/18/my-osx-setup">
+  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/09/07/reddit-repost-blocker">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A Place For Me To Leave My Thoughts" type="application/atom+xml">
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">My OSX Setup</h1>
+      <h1 class="entry-title">Reddit Repost Blocker</h1>
     
     
       <p class="meta">
@@ -96,46 +96,66 @@
   
 
 
-<time datetime="2013-08-18T18:58:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-09-07T03:50:00-04:00" pubdate data-updated="true">Sep 7<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>My brother has just started college and I recommended that he should get a Macbook Pro because I have had a blast using one for the past one year. Also, he is interested in Computer Science and said he would like tips to know what to install for a good workstation setup.</p>
+<div class="entry-content"><p>A large issue with <a href="http://reddit.com">Reddit</a> is that content is regularly submitted again and again (otherwise known as reposting).</p>
 
-<p>Before an internship I primarily used a Linux box and was comfortable using the command line, but always had trouble with various things such as sound, turning on after a sleep, and performance issues on my previous Linux laptop. This might have been due to the fact that the machine wasn&rsquo;t the highest quality machine and might not have been a good fit for Ubuntu.</p>
+<p>A vocal minority always posts comments about how the image has been posted many times before, sometimes the same day, week, or month.</p>
 
-<p>As I was making the list I figured it would be good to put up the list online so others can look at my setup and decide whether they want to use any of the tools I do.</p>
+<p>So I started to think about how I can make a Reddit Enhancement Suite extension that would hide reposts.</p>
 
-<h3>General OSX Desktop Tools:</h3>
+<p>I started to think about how this would work and there are a few ways I could se this working.</p>
+
+<h2>But first, why?</h2>
+
+<p>Pros</p>
 
 <ul>
-<li>Toggl</li>
-<li>Yoink</li>
-<li>Bartender</li>
-<li>Flux</li>
-<li>gfxCardStatus</li>
-<li>Alfred</li>
-<li>TotalFinder</li>
-<li>Spectacle</li>
-<li>KeyRemap4Macbook</li>
+<li>Reposts suck, an argument that the content on the web site should be fresh and seeing the same submission over and over would decrease the quality of the website.</li>
 </ul>
 
 
-<h3>Development Tools</h3>
+<p>Cons</p>
 
 <ul>
-<li>MacVim</li>
-<li>Oh My Zsh</li>
-<li>DBeaver</li>
-<li>Sublime Text</li>
-<li>Iterm2</li>
+<li>Reposts are a real part of Reddit, just because something is reposted doesn&rsquo;t mean that there won&rsquo;t be an interesting addition to the discussion that could be interesting for a user.</li>
+<li>I remember when I used to block the imgur domain using Reddit Enhancement Suite, the extension use to just hide the submissions. So what would happen is that whenever I went to the front page I would only see two actual posts because almost everything was imgur links. For this extension, it would be counter-productive to block most of the submissions from the front page because they are reposts.</li>
 </ul>
 
 
-<p>I have remapped the Caps Lock to Control and will have a post discussing how I have made my life better with remapping keys.</p>
+<h2>One Way</h2>
+
+<ul>
+<li>Keep track of all front page posts for a long time (month or so, to start) into a data store (take your pick, mongo or sql)</li>
+<li>The extension checks the url of the post against the database and if it already exists hide the submission post.</li>
+</ul>
+
+
+<p>Issues:</p>
+
+<ul>
+<li>Getting the data can take a while, but I found other people who have been archiving Reddit data</li>
+<li>Checking against the data store for a certain URL can take a while, of course hashing can make it easier but eventually collisions can happen.
+
+<ul>
+<li>One way to make things faster is to use some sort of hashing strategy that can check different hashtables for a URL. I remember that some data stores reverse a URL to make this easier. For example, the strategy is to store a domain in the format com.vvohra.subdomain so the com&rsquo;s, net&rsquo;s, etc can be stored on different servers to speed up checking of data.</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Existing Solutions</h2>
+
+<p><a href="http://karmadecay.com">Karma Decay</a> shows which images have been reposted. I think it&rsquo;s similar to TinEye, so it should be able to handle images from different domains and changed sizes. It seems Karma Decay has an extension which allows a user to notice a submission has duplicates.</p>
+
+<p>Another extension I found was <a href="http://node.angryzor.com/~rtytgat/repostblocker/">Repost Blocker</a>, which seems to be exactly what I brainstormed. Looking through the documentation, it seems like this extension uses Karma Decay to check for reposts.</p>
+
+<p>Just a short brainstorming activity, gotta think some more!</p>
 </div>
 
 
@@ -158,7 +178,7 @@
   
 
 
-<time datetime="2013-08-18T18:58:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-09-07T03:50:00-04:00" pubdate data-updated="true">Sep 7<span>th</span>, 2013</time>
       
 
 
@@ -166,7 +186,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/18/my-osx-setup/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/18/my-osx-setup/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/09/07/reddit-repost-blocker/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/09/07/reddit-repost-blocker/" >Tweet</a>
   
   
   
@@ -175,10 +195,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/18/efficient-sql/" title="Previous Post: Efficient SQL (Custom)">&laquo; Efficient SQL (Custom)</a>
+        <a class="basic-alignment left" href="/blog/2013/08/18/osx-shortcuts/" title="Previous Post: OSX Shortcuts">&laquo; OSX Shortcuts</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/08/18/osx-shortcuts/" title="Next Post: OSX Shortcuts">OSX Shortcuts &raquo;</a>
       
     </p>
   </footer>

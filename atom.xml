@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-08-26T23:37:00-04:00</updated>
+  <updated>2013-09-07T03:51:44-04:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -12,6 +12,67 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Reddit Repost Blocker]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/09/07/reddit-repost-blocker/"/>
+    <updated>2013-09-07T03:50:00-04:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/09/07/reddit-repost-blocker</id>
+    <content type="html"><![CDATA[<p>A large issue with <a href="http://reddit.com">Reddit</a> is that content is regularly submitted again and again (otherwise known as reposting).</p>
+
+<p>A vocal minority always posts comments about how the image has been posted many times before, sometimes the same day, week, or month.</p>
+
+<p>So I started to think about how I can make a Reddit Enhancement Suite extension that would hide reposts.</p>
+
+<p>I started to think about how this would work and there are a few ways I could se this working.</p>
+
+<h2>But first, why?</h2>
+
+<p>Pros</p>
+
+<ul>
+<li>Reposts suck, an argument that the content on the web site should be fresh and seeing the same submission over and over would decrease the quality of the website.</li>
+</ul>
+
+
+<p>Cons</p>
+
+<ul>
+<li>Reposts are a real part of Reddit, just because something is reposted doesn&rsquo;t mean that there won&rsquo;t be an interesting addition to the discussion that could be interesting for a user.</li>
+<li>I remember when I used to block the imgur domain using Reddit Enhancement Suite, the extension use to just hide the submissions. So what would happen is that whenever I went to the front page I would only see two actual posts because almost everything was imgur links. For this extension, it would be counter-productive to block most of the submissions from the front page because they are reposts.</li>
+</ul>
+
+
+<h2>One Way</h2>
+
+<ul>
+<li>Keep track of all front page posts for a long time (month or so, to start) into a data store (take your pick, mongo or sql)</li>
+<li>The extension checks the url of the post against the database and if it already exists hide the submission post.</li>
+</ul>
+
+
+<p>Issues:</p>
+
+<ul>
+<li>Getting the data can take a while, but I found other people who have been archiving Reddit data</li>
+<li>Checking against the data store for a certain URL can take a while, of course hashing can make it easier but eventually collisions can happen.
+
+<ul>
+<li>One way to make things faster is to use some sort of hashing strategy that can check different hashtables for a URL. I remember that some data stores reverse a URL to make this easier. For example, the strategy is to store a domain in the format com.vvohra.subdomain so the com&rsquo;s, net&rsquo;s, etc can be stored on different servers to speed up checking of data.</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Existing Solutions</h2>
+
+<p><a href="http://karmadecay.com">Karma Decay</a> shows which images have been reposted. I think it&rsquo;s similar to TinEye, so it should be able to handle images from different domains and changed sizes. It seems Karma Decay has an extension which allows a user to notice a submission has duplicates.</p>
+
+<p>Another extension I found was <a href="http://node.angryzor.com/~rtytgat/repostblocker/">Repost Blocker</a>, which seems to be exactly what I brainstormed. Looking through the documentation, it seems like this extension uses Karma Decay to check for reposts.</p>
+
+<p>Just a short brainstorming activity, gotta think some more!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[OSX Shortcuts]]></title>
