@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-09-07T14:14:14-04:00</updated>
+  <updated>2013-09-07T16:21:53-04:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Large Text Splitter]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/09/07/large-text-splitter/"/>
+    <updated>2013-09-07T16:15:00-04:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/09/07/large-text-splitter</id>
+    <content type="html"><![CDATA[<h2>Problem</h2>
+
+<p>While reading articles sometimes the writer doesn&rsquo;t split the text up in paragraphs which can be a pain to try to read.</p>
+
+<p>Paragraphs are a great way of helping a reader have landmarks in a large amount of text. Also they serve as great separators that tell the reader I&rsquo;m ending on the previous idea and beginning a new one.</p>
+
+<h2>Solution</h2>
+
+<p>Some sort of extension for a browser with which a user can select a block of text and have the text automatically split into paragrahs.</p>
+
+<p>This can be implemented by editing the HTML content directly and adding the line breaks after sentences end.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Connecting Internet and Physical World]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/09/07/connecting-internet-and-physical-world/"/>
+    <updated>2013-09-07T14:27:00-04:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/09/07/connecting-internet-and-physical-world</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Sharing Content Quickly]]></title>

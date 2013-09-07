@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Javascript/Node Build System for Sublime - A Place For Me To Leave My Thoughts</title>
+  <title>Large Text Splitter - A Place For Me To Leave My Thoughts</title>
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="To be able to build Javascript in Sublime Text, it&rsquo;s necessary to add a new Build System. To be able to do that, it&rsquo;s necessary to first &hellip;">
+  <meta name="description" content="Problem While reading articles sometimes the writer doesn&rsquo;t split the text up in paragraphs which can be a pain to try to read. Paragraphs are &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime">
+  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/09/07/large-text-splitter">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A Place For Me To Leave My Thoughts" type="application/atom+xml">
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Javascript/Node Build System for Sublime</h1>
+      <h1 class="entry-title">Large Text Splitter</h1>
     
     
       <p class="meta">
@@ -96,35 +96,24 @@
   
 
 
-<time datetime="2013-08-18T16:56:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-09-07T16:15:00-04:00" pubdate data-updated="true">Sep 7<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>To be able to build Javascript in Sublime Text, it&rsquo;s necessary to add a new Build System.</p>
+<div class="entry-content"><h2>Problem</h2>
 
-<p>To be able to do that, it&rsquo;s necessary to first have Node installed, so head over to <a href="http://nodejs.org/download/">Node.js homepage</a> to install node.js first.</p>
+<p>While reading articles sometimes the writer doesn&rsquo;t split the text up in paragraphs which can be a pain to try to read.</p>
 
-<p>With the Sublime Text program open, navigate to <code>Tools</code> &ndash;> <code>Build System</code> &ndash;> <code>New Build System ...</code></p>
+<p>Paragraphs are a great way of helping a reader have landmarks in a large amount of text. Also they serve as great separators that tell the reader I&rsquo;m ending on the previous idea and beginning a new one.</p>
 
-<p>And add the following:</p>
+<h2>Solution</h2>
 
-<figure class='code'><figcaption><span>Node.sublime-build</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="s2">&quot;cmd&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;/usr/local/bin/node&quot;</span><span class="p">,</span> <span class="s2">&quot;$file&quot;</span><span class="p">],</span>
-</span><span class='line'>    <span class="s2">&quot;working_dir&quot;</span><span class="o">:</span> <span class="s2">&quot;${project_path:${folder}}&quot;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+<p>Some sort of extension for a browser with which a user can select a block of text and have the text automatically split into paragrahs.</p>
 
-
-<p>It might be necessary to adjust the path to node for your own setup.</p>
-
-<p>Now save, restart Sublime Text, and you should be able to build Javascript with Sublime Text!</p>
+<p>This can be implemented by editing the HTML content directly and adding the line breaks after sentences end.</p>
 </div>
 
 
@@ -147,15 +136,21 @@
   
 
 
-<time datetime="2013-08-18T16:56:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-09-07T16:15:00-04:00" pubdate data-updated="true">Sep 7<span>th</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ideas/'>ideas</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/09/07/large-text-splitter/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/09/07/large-text-splitter/" >Tweet</a>
   
   
   
@@ -164,10 +159,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/18/markdown-reference/" title="Previous Post: Markdown Reference">&laquo; Markdown Reference</a>
+        <a class="basic-alignment left" href="/blog/2013/09/07/connecting-internet-and-physical-world/" title="Previous Post: Connecting Internet and Physical World">&laquo; Connecting Internet and Physical World</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/08/18/efficient-sql/" title="Next Post: Efficient SQL (Custom)">Efficient SQL (Custom) &raquo;</a>
       
     </p>
   </footer>
