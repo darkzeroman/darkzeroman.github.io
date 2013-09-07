@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My OSX Setup - A Place For Me To Leave My Thoughts</title>
+  <title>Sharing Content Quickly - A Place For Me To Leave My Thoughts</title>
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="My brother has just started college and I recommended that he should get a Macbook Pro because I have had a blast using one for the past one year. &hellip;">
+  <meta name="description" content="Context When I browse Reddit or another similar website there are many images that I want to share with someone. The process currently looks like &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/18/my-osx-setup">
+  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/09/07/sharing-content-quickly">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A Place For Me To Leave My Thoughts" type="application/atom+xml">
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">My OSX Setup</h1>
+      <h1 class="entry-title">Sharing Content Quickly</h1>
     
     
       <p class="meta">
@@ -96,46 +96,56 @@
   
 
 
-<time datetime="2013-08-18T18:58:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-09-07T13:44:00-04:00" pubdate data-updated="true">Sep 7<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>My brother has just started college and I recommended that he should get a Macbook Pro because I have had a blast using one for the past one year. Also, he is interested in Computer Science and said he would like tips to know what to install for a good workstation setup.</p>
+<div class="entry-content"><h2>Context</h2>
 
-<p>Before an internship I primarily used a Linux box and was comfortable using the command line, but always had trouble with various things such as sound, turning on after a sleep, and performance issues on my previous Linux laptop. This might have been due to the fact that the machine wasn&rsquo;t the highest quality machine and might not have been a good fit for Ubuntu.</p>
-
-<p>As I was making the list I figured it would be good to put up the list online so others can look at my setup and decide whether they want to use any of the tools I do.</p>
-
-<h3>General OSX Desktop Tools:</h3>
+<p>When I browse Reddit or another similar website there are many images that I want to share with someone. The process currently looks like this:</p>
 
 <ul>
-<li>Toggl</li>
-<li>Yoink</li>
-<li>Bartender</li>
-<li>Flux</li>
-<li>gfxCardStatus</li>
-<li>Alfred</li>
-<li>TotalFinder</li>
-<li>Spectacle</li>
-<li>KeyRemap4Macbook</li>
+<li>Copy URL to clipboard</li>
+<li>Paste URL to friend</li>
+<li>Friend clicks URL</li>
+<li>Friend notices funny image</li>
+<li>Repeat above</li>
 </ul>
 
 
-<h3>Development Tools</h3>
+<h2>Problem</h2>
+
+<p>This process works great when I&rsquo;m only sharing 1 or 2 images, but sometimes me and my buddy spend a good 10 minutes sending random images to each other and this process becomes inefficient.</p>
+
+<p>I&rsquo;m thinking about building a web app that will dynamically load any type of content for both users.</p>
+
+<p>The use case is the following:</p>
 
 <ul>
-<li>MacVim</li>
-<li>Oh My Zsh</li>
-<li>DBeaver</li>
-<li>Sublime Text</li>
-<li>Iterm2</li>
+<li>User 1 sends User 2 a link to the web app</li>
+<li>User 1 can pass a link to the web app, which will load link automatically for User 2</li>
+<li>Both users can automatically load content for each other</li>
 </ul>
 
 
-<p>I have remapped the Caps Lock to Control and will have a post discussing how I have made my life better with remapping keys.</p>
+<p>How to build this?</p>
+
+<h2>Solution</h2>
+
+<p>Usually clients use AJAX to poll a server for status updates, but in this case, it would make sense for either the clients communicate directly or the server to push to clients updates.</p>
+
+<p>I have looked into browser to browser communication platforms like WebRTC, but I don&rsquo;t feel that is at a usable state for this type of project.</p>
+
+<p>For the server to push updates to the client, the options are some sort of web sockets. That leaves two major tools: socket.io and SockJS.</p>
+
+<p>After doing a little bit of Googling it seems the common consensus is that SockJS is better than socket.io.</p>
+
+<h2>Conclusion</h2>
+
+<p>This seems to be a pretty easy project to do, it seems like with SockJS lots of the hard implementation details are taken care of. I want to cover the concepts of SockJS in another blog post though!</p>
 </div>
 
 
@@ -158,15 +168,21 @@
   
 
 
-<time datetime="2013-08-18T18:58:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-09-07T13:44:00-04:00" pubdate data-updated="true">Sep 7<span>th</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ideas/'>ideas</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/18/my-osx-setup/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/18/my-osx-setup/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/09/07/sharing-content-quickly/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/09/07/sharing-content-quickly/" >Tweet</a>
   
   
   
@@ -175,10 +191,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/18/efficient-sql/" title="Previous Post: Efficient SQL (Custom)">&laquo; Efficient SQL (Custom)</a>
+        <a class="basic-alignment left" href="/blog/2013/09/07/reddit-repost-blocker/" title="Previous Post: Reddit Repost Blocker">&laquo; Reddit Repost Blocker</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/08/18/osx-shortcuts/" title="Next Post: OSX Shortcuts">OSX Shortcuts &raquo;</a>
       
     </p>
   </footer>
