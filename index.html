@@ -272,26 +272,26 @@
 
 <p>So I started to think about how I can make a Reddit Enhancement Suite extension that would hide reposts.</p>
 
-<p>I started to think about how this would work and there are a few ways I could se this working.</p>
+<p>I started to think about how this would work and there are a few ways I could see this working.</p>
 
 <h2>But first, why?</h2>
 
-<p>Pros</p>
+<h3>Pros</h3>
 
 <ul>
-<li>Reposts suck, an argument that the content on the web site should be fresh and seeing the same submission over and over would decrease the quality of the website.</li>
+<li>Reposts suck. An argument that the content on Reddit should be fresh and seeing the same submission over and over would decrease the quality of the website.</li>
 </ul>
 
 
-<p>Cons</p>
+<h3>Cons</h3>
 
 <ul>
-<li>Reposts are a real part of Reddit, just because something is reposted doesn&rsquo;t mean that there won&rsquo;t be an interesting addition to the discussion that could be interesting for a user.</li>
+<li>Reposts are a real part of Reddit, just because something is reposted doesn&rsquo;t mean that there won&rsquo;t be an interesting addition to the discussion a user has never seen before.</li>
 <li>I remember when I used to block the imgur domain using Reddit Enhancement Suite, the extension use to just hide the submissions. So what would happen is that whenever I went to the front page I would only see two actual posts because almost everything was imgur links. For this extension, it would be counter-productive to block most of the submissions from the front page because they are reposts.</li>
 </ul>
 
 
-<h2>One Way</h2>
+<h2>One Possible Implementation</h2>
 
 <ul>
 <li>Keep track of all front page posts for a long time (month or so, to start) into a data store (take your pick, mongo or sql)</li>
@@ -299,10 +299,10 @@
 </ul>
 
 
-<p>Issues:</p>
+<h3>Issues:</h3>
 
 <ul>
-<li>Getting the data can take a while, but I found other people who have been archiving Reddit data</li>
+<li>Getting the data can take a while, but I found other people who have been archiving Reddit data.</li>
 <li>Checking against the data store for a certain URL can take a while, of course hashing can make it easier but eventually collisions can happen.
 
 <ul>
