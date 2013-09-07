@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-09-07T18:42:19-04:00</updated>
+  <updated>2013-09-07T18:55:39-04:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using Disqus for Comments on Your Octopress]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/"/>
+    <updated>2013-09-07T18:43:00-04:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/09/07/using-disqus-for-comments-on-your-octopress</id>
+    <content type="html"><![CDATA[<p>Want to know how to get comments on your Octopress blog?</p>
+
+<p>It&rsquo;s not difficult at all!</p>
+
+<h1>Steps</h1>
+
+<ol>
+<li><p>Go on over to <a href="http://www.disqus.com">disqus.com</a> and make an account.</p></li>
+<li><p>Click on &ldquo;Universal&rdquo; for the type of blog you are using.</p></li>
+<li><p>Open <code>_config.yml</code> in your root directory for your Octopress blog.</p></li>
+<li><p>Find the line that looks like the following:</p></li>
+</ol>
+
+
+<p>  <code>yml _config.yml
+  # Disqus Comments
+  disqus_short_name:
+  disqus_show_comment_count: false
+ </code></p>
+
+<ol>
+<li><p>Look at the Disqus short name (mine is darkzeroman), use the following image as a guide for where to look.
+<img src="http://i.imgur.com/l9SwGSw.png" alt="Disqus Screenshot" /></p></li>
+<li><p>Copy that over to the <code>_config.yml</code> entry for <code>disqus_short_name</code> you saw in Step 4. So mine looks like:</p></li>
+</ol>
+
+
+<figure class='code'><figcaption><span>_config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="c1"># Disqus Comments</span>
+</span><span class='line'><span class="l-Scalar-Plain">disqus_short_name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">darkzeroman</span>
+</span><span class='line'><span class="l-Scalar-Plain">disqus_show_comment_count</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol>
+<li>You&rsquo;re done!</li>
+</ol>
+
+
+<p>Have fun!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Large Text Splitter]]></title>
