@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-09-07T18:55:39-04:00</updated>
+  <updated>2013-09-11T22:11:09-04:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -32,11 +32,14 @@
 </ol>
 
 
-<p>  <code>yml _config.yml
-  # Disqus Comments
-  disqus_short_name:
-  disqus_show_comment_count: false
- </code></p>
+<figure class='code'><figcaption><span>_config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="c1"># Disqus Comments</span>
+</span><span class='line'><span class="l-Scalar-Plain">disqus_short_name</span><span class="p-Indicator">:</span>
+</span><span class='line'><span class="l-Scalar-Plain">disqus_show_comment_count</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+</span></code></pre></td></tr></table></div></figure>
+
 
 <ol>
 <li><p>Look at the Disqus short name (mine is darkzeroman), use the following image as a guide for where to look.
@@ -79,15 +82,6 @@
 <p>Some sort of extension for a browser with which a user can select a block of text and have the text automatically split into paragrahs.</p>
 
 <p>This can be implemented by editing the HTML content directly and adding the line breaks after sentences end.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Connecting Internet and Physical World]]></title>
-    <link href="http://darkzeroman.github.io/blog/2013/09/07/connecting-internet-and-physical-world/"/>
-    <updated>2013-09-07T14:27:00-04:00</updated>
-    <id>http://darkzeroman.github.io/blog/2013/09/07/connecting-internet-and-physical-world</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
