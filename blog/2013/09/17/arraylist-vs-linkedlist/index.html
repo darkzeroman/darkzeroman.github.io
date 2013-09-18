@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Using Disqus for Comments on Your Octopress - A Place For Me To Leave My Thoughts</title>
+  <title>ArrayList vs LinkedList - A Place For Me To Leave My Thoughts</title>
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="Want to know how to get comments on your Octopress blog? It&rsquo;s not difficult at all! Steps Go on over to disqus.com and make an account.
-Click &hellip;">
+  <meta name="description" content="I&rsquo;ve been reviewing some material for interviews and something new I learned today is the difference between ArrayList and LinkedList. The Big &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ Click &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/09/07/using-disqus-for-comments-on-your-octopress">
+  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/09/17/arraylist-vs-linkedlist">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A Place For Me To Leave My Thoughts" type="application/atom+xml">
@@ -81,7 +80,7 @@ Click &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Using Disqus for Comments on Your Octopress</h1>
+      <h1 class="entry-title">ArrayList vs LinkedList</h1>
     
     
       <p class="meta">
@@ -97,58 +96,60 @@ Click &hellip;">
   
 
 
-<time datetime="2013-09-07T18:43:00-04:00" pubdate data-updated="true">Sep 7<span>th</span>, 2013</time>
+<time datetime="2013-09-17T01:18:00-04:00" pubdate data-updated="true">Sep 17<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Want to know how to get comments on your Octopress blog?</p>
+<div class="entry-content"><p>I&rsquo;ve been reviewing some material for interviews and something new I learned today is the difference between ArrayList and LinkedList.</p>
 
-<p>It&rsquo;s not difficult at all!</p>
+<h2>The Big O Notes</h2>
 
-<h1>Steps</h1>
+<p>For just review, the Big O for the operations for each data structure is:</p>
 
-<ol>
-<li><p>Go on over to <a href="http://www.disqus.com">disqus.com</a> and make an account.</p></li>
-<li><p>Click on &ldquo;Universal&rdquo; for the type of blog you are using.</p></li>
-<li><p>Open <code>_config.yml</code> in your root directory for your Octopress blog.</p></li>
-<li><p>Find the line that looks like the following:</p></li>
-</ol>
+<p>For LinkedList</p>
 
-
-<figure class='code'><figcaption><span>_config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="c1"># Disqus Comments</span>
-</span><span class='line'><span class="l-Scalar-Plain">disqus_short_name</span><span class="p-Indicator">:</span>
-</span><span class='line'><span class="l-Scalar-Plain">disqus_show_comment_count</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
-</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>* get is O(n)
+</span><span class='line'>* add is O(1)
+</span><span class='line'>* remove is O(n)
+</span><span class='line'>* Iterator.remove is O(1)</span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
-<li><p>Look at the Disqus short name (mine is darkzeroman), use the following image as a guide for where to look.
-<img src="http://i.imgur.com/l9SwGSw.png" alt="Disqus Screenshot" /></p></li>
-<li><p>Copy that over to the <code>_config.yml</code> entry for <code>disqus_short_name</code> you saw in Step 4. So mine looks like:</p></li>
-</ol>
+<p>For ArrayList</p>
 
-
-<figure class='code'><figcaption><span>_config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="c1"># Disqus Comments</span>
-</span><span class='line'><span class="l-Scalar-Plain">disqus_short_name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">darkzeroman</span>
-</span><span class='line'><span class="l-Scalar-Plain">disqus_show_comment_count</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
-</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>* get is O(1)
+</span><span class='line'>* add is O(1) amortized, but O(n)
+</span><span class='line'>* remove is O(n)</span></code></pre></td></tr></table></div></figure>
 
 
-<ol>
-<li>You&rsquo;re done!</li>
-</ol>
+<h2>But why the difference?</h2>
 
+<p>Well, something that&rsquo;s obvious to me now, but wasn&rsquo;t before is that <strong>Array</strong>List is actually backed by an array.</p>
 
-<p>Have fun!</p>
+<p>So what does that mean? That means that on average, adding an element to the ArrayList is constant time, since it just adds it to the next empty index. But there can be a case when the backing array is full and it needs to be made bigger. So then a new array is made, the elements are copied over, which leads to an operation of O(n).</p>
+
+<p>And now the reason why remove is O(n) makes sense, if the first element was to be removed, the whole array must be shifted.</p>
+
+<h2>Conclusions</h2>
+
+<p>So when does LinkedList make sense? When you want to quickly add something to a data structure and the difference between ArrayList is that the operation is always O(1) instead of amortized O(1).</p>
+
+<p>ArrayList is good for when O(1) operations are needed for adding/getting, but remember that if the list grows by a large amount that reinitializing the backing array will be costly.</p>
+
+<p>By the way, an alternative for LinkedList is ArrayDeque which gives constant operations for adding/removing at both ends of the queue. I was first exposed to this data structure in Python, where it was called deque.</p>
+
+<h2>Update</h2>
+
+<p>I recently added notes for Java Collections on my GitHub Notes Repository. <a href="https://github.com/darkzeroman/Notes/blob/master/JavaCollections.md">Check it out!</a></p>
 </div>
 
 
@@ -171,7 +172,7 @@ Click &hellip;">
   
 
 
-<time datetime="2013-09-07T18:43:00-04:00" pubdate data-updated="true">Sep 7<span>th</span>, 2013</time>
+<time datetime="2013-09-17T01:18:00-04:00" pubdate data-updated="true">Sep 17<span>th</span>, 2013</time>
       
 
 
@@ -179,7 +180,7 @@ Click &hellip;">
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/09/17/arraylist-vs-linkedlist/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/09/17/arraylist-vs-linkedlist/" >Tweet</a>
   
   
   
@@ -188,10 +189,8 @@ Click &hellip;">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/09/07/large-text-splitter/" title="Previous Post: Large Text Splitter">&laquo; Large Text Splitter</a>
+        <a class="basic-alignment left" href="/blog/2013/09/15/android-styling-guide/" title="Previous Post: Android Styling Guide">&laquo; Android Styling Guide</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/09/15/android-styling-guide/" title="Next Post: Android Styling Guide">Android Styling Guide &raquo;</a>
       
     </p>
   </footer>
@@ -286,8 +285,8 @@ Click &hellip;">
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://darkzeroman.github.io/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/';
-        var disqus_url = 'http://darkzeroman.github.io/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/';
+        var disqus_identifier = 'http://darkzeroman.github.io/blog/2013/09/17/arraylist-vs-linkedlist/';
+        var disqus_url = 'http://darkzeroman.github.io/blog/2013/09/17/arraylist-vs-linkedlist/';
         var disqus_script = 'embed.js';
       
     (function () {

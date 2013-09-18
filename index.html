@@ -9,7 +9,7 @@
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="I had the chance to interview with Twilio. I got the opportunity because a person with who I worked on an Android application called GT NextBus was &hellip;">
+  <meta name="description" content="I&rsquo;ve been reviewing some material for interviews and something new I learned today is the difference between ArrayList and LinkedList. The Big &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,88 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/09/17/arraylist-vs-linkedlist/">ArrayList vs LinkedList</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-17T01:18:00-04:00" pubdate data-updated="true">Sep 17<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;ve been reviewing some material for interviews and something new I learned today is the difference between ArrayList and LinkedList.</p>
+
+<h2>The Big O Notes</h2>
+
+<p>For just review, the Big O for the operations for each data structure is:</p>
+
+<p>For LinkedList</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>* get is O(n)
+</span><span class='line'>* add is O(1)
+</span><span class='line'>* remove is O(n)
+</span><span class='line'>* Iterator.remove is O(1)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For ArrayList</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>* get is O(1)
+</span><span class='line'>* add is O(1) amortized, but O(n)
+</span><span class='line'>* remove is O(n)</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>But why the difference?</h2>
+
+<p>Well, something that&rsquo;s obvious to me now, but wasn&rsquo;t before is that <strong>Array</strong>List is actually backed by an array.</p>
+
+<p>So what does that mean? That means that on average, adding an element to the ArrayList is constant time, since it just adds it to the next empty index. But there can be a case when the backing array is full and it needs to be made bigger. So then a new array is made, the elements are copied over, which leads to an operation of O(n).</p>
+
+<p>And now the reason why remove is O(n) makes sense, if the first element was to be removed, the whole array must be shifted.</p>
+
+<h2>Conclusions</h2>
+
+<p>So when does LinkedList make sense? When you want to quickly add something to a data structure and the difference between ArrayList is that the operation is always O(1) instead of amortized O(1).</p>
+
+<p>ArrayList is good for when O(1) operations are needed for adding/getting, but remember that if the list grows by a large amount that reinitializing the backing array will be costly.</p>
+
+<p>By the way, an alternative for LinkedList is ArrayDeque which gives constant operations for adding/removing at both ends of the queue. I was first exposed to this data structure in Python, where it was called deque.</p>
+
+<h2>Update</h2>
+
+<p>I recently added notes for Java Collections on my GitHub Notes Repository. <a href="https://github.com/darkzeroman/Notes/blob/master/JavaCollections.md">Check it out!</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/09/15/android-styling-guide/">Android Styling Guide</a></h1>
     
     
@@ -106,15 +188,19 @@
   </header>
 
 
-  <div class="entry-content"><p>I had the chance to interview with <a href="http://www.twilio.com/">Twilio</a>. I got the opportunity because a person with who I worked on an Android application called <a href="https://play.google.com/store/apps/details?id=com.doug.nextbus&amp;hl=en">GT NextBus</a> was around on campus interviewing.</p>
+  <div class="entry-content"><p>I had the chance to interview with <a href="http://www.twilio.com/">Twilio</a> this past week. I got the opportunity because a person with who I worked on an Android application called <a href="https://play.google.com/store/apps/details?id=com.doug.nextbus&amp;hl=en">GT NextBus</a> was around on campus interviewing.</p>
 
-<p>As I was looking over the code base I realized that I wrote pretty good documentation describing the features I was working on and my expectations of other people working on the project. <a href="https://github.com/darkzeroman/nextbus">GitHub Repo</a></p>
+<p>And then I wanted to go back over my code just to refresh my mind about the project. As I was looking over the code base I realized that I wrote pretty good documentation describing the features I was working on and my expectations of other people working on the project.</p>
 
-<p>One of the best parts about using a new language for a project is that I spend a good amount of time reading language style guidelines because I want to understand how to write the most maintainable code. This is something I did with Javascript (using online resources and JSLint), Java (Lots of reading of Apache coding style guides), and Android (Used Google Android Style Guides).</p>
+<p><a href="https://github.com/darkzeroman/nextbus">GitHub Repo</a></p>
 
-<p>I really liked the Android Styling Guideline and decided to quickly summary all the major points for people who want to skim it.</p>
+<p>One of the first things I do when using a new language for a project is spend a good amount of time reading language style guidelines There are many reasons for this, such as learning to write maintainable code and learning another view point on how code should be written. I did with Javascript (using online resources and JSLint), Java (Lots of reading of Apache coding style guides), and Android (used Google Android Style Guides).</p>
 
-<p>The notes are in my Notes repository which I use as a knowledge center for many Computer Science concepts, read this document and many more!</p>
+<p>I really liked the Android Styling Guideline and decided to put together a summary of all the major points for anyone who wants to skim it.</p>
+
+<p>The notes are in my <a href="http://github.com/notes">Notes</a> repository which I use as a knowledge center for many Computer Science concepts.</p>
+
+<p>So check out this document and others which include notes about Databases, Networking, or Object Oriented Programming.</p>
 
 <p><a href="https://github.com/darkzeroman/Notes/blob/master/Android-Java.md#code-style-guidelines">Link to Android Styling Guide Notes</a></p>
 </div>
@@ -786,119 +872,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/18/markdown-reference/">Markdown Reference</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-18T12:39:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>What is Markdown good for?
-Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is converted into valid HTML. Some examples are GitHub Repository README and how I write these blog posts.</p>
-
-<p>The following is a quick overview of the most common Markdown syntax.</p>
-
-<h2>Headers</h2>
-
-<p>  <code># Level one header</code></p>
-
-<p>  <code>## Level two header</code></p>
-
-<p>  <code>### Level three header</code></p>
-
-<p>  &hellip; Up to six hashes are supported</p>
-
-<p>I would show an example, but it doesn&rsquo;t work well because I&rsquo;m already using Markdown for this blog post!</p>
-
-<h2>Links</h2>
-
-<p>  <code>[This is a link](http://www.darkzeroman.github.io)</code></p>
-
-<p>  <a href="http://www.darkzeroman.github.io">This is a link</a></p>
-
-<h2>Lists</h2>
-
-<h3>Unordered Lists</h3>
-
-<p>Use any of the following: <code>*, +, -</code></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>* Item 1
-</span><span class='line'>* Item 2
-</span><span class='line'>* Item 3</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>This</li>
-<li>is</li>
-<li>a list</li>
-</ul>
-
-
-<h3>Ordered Lists</h3>
-
-<p>Ordered lists use number followed by period.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>1. with
-</span><span class='line'>2. numbers</span></code></pre></td></tr></table></div></figure>
-
-
-<ol>
-<li>with</li>
-<li>numbers</li>
-</ol>
-
-
-<h2>Formatting/Emphasis</h2>
-
-<p>  <code>_italic_ or *italic*</code></p>
-
-<p>  <em>italic</em></p>
-
-<p>  <code>__bold__ or **bold**</code></p>
-
-<p>  <strong>bold</strong></p>
-
-<hr />
-
-<h2>More Resources:</h2>
-
-<ul>
-<li><a href="http://daringfireball.net/projects/markdown/syntax">Full Markdown Syntax Document</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -914,6 +887,10 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/17/arraylist-vs-linkedlist/">ArrayList vs LinkedList</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/15/android-styling-guide/">Android Styling Guide</a>
       </li>
     
@@ -927,10 +904,6 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
     
       <li class="post">
         <a href="/blog/2013/09/07/sharing-content-quickly/">Sharing Content Quickly</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/reddit-repost-blocker/">Reddit Repost Blocker</a>
       </li>
     
   </ul>
