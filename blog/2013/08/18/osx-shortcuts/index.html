@@ -9,9 +9,38 @@
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="I started to really use keyboard shortcuts when I started to use VIM. But what I dislike is that I can&rsquo;t HJKL in another applications, which is &hellip;">
+  <meta name="description" content="I started to really use keyboard shortcuts when I started to use VIM. But what I dislike is that I can’t HJKL in another applications, which is tough &hellip;">
   
 
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+  </script>
+
+  <script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -103,122 +132,103 @@
   </header>
 
 
-<div class="entry-content"><p>I started to really use keyboard shortcuts when I started to use VIM. But what I dislike is that I can&rsquo;t HJKL in another applications, which is tough to get over because I spent so much time learning I couldn&rsquo;t use them in other applications!</p>
+<div class="entry-content"><p>I started to really use keyboard shortcuts when I started to use VIM. But what I dislike is that I can’t HJKL in another applications, which is tough to get over because I spent so much time learning I couldn’t use them in other applications!</p>
 
 <p>There are ways to use VIM keybindings in other applications, such as Vimperator, Vimium, Eclim, etc. But the hardest is that getting VIM keybindings to function means that there needs to be support for the insert, normal modes (<a href="http://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/Modes">More here</a>) to work correctly. And this is difficult to do in an effective manner!</p>
 
-<p>So that&rsquo;s why the Emacs keybindings make sense! Instead of having to try to mess around with modes, I can just use Control + Key to complete an operation. The bad part about using Control is that it is on the bottom left part of a Macbook keyboard, but I do remember that people always mentioned to me that they would remap the Caps Lock key to Control.</p>
+<p>So that’s why the Emacs keybindings make sense! Instead of having to try to mess around with modes, I can just use Control + Key to complete an operation. The bad part about using Control is that it is on the bottom left part of a Macbook keyboard, but I do remember that people always mentioned to me that they would remap the Caps Lock key to Control.</p>
 
-<p>I am sad that I can&rsquo;t switch into ALL CAPS mode (which is good to have when I&rsquo;m trying to write proper SQL), but being able to control the cursor without having to move my hands to the arrow keys is something I am willing to give up. The one bad part is that these keyboards shortcuts are not always available in all programs, but it works in terminal, Chrome toolbar, and text editors! Which is really covers most of the stuff I do anyway!</p>
+<p>I am sad that I can’t switch into ALL CAPS mode (which is good to have when I’m trying to write proper SQL), but being able to control the cursor without having to move my hands to the arrow keys is something I am willing to give up. The one bad part is that these keyboards shortcuts are not always available in all programs, but it works in terminal, Chrome toolbar, and text editors! Which is really covers most of the stuff I do anyway!</p>
 
-<p>The following is a summary of the keyboard shortcuts I find most important to know.
+<p>The following is a summary of the keyboard shortcuts I find most important to know. 
 <em>Cursor is the small box or vertical line that shows where you are currently typing.</em></p>
 
-<h2>Movement</h2>
+<h2 id="movement">Movement</h2>
 
 <table>
-<thead>
-<tr>
-<th></th>
-<th align="center"> Keyboard Shortcut </th>
-<th align="center">   Command     </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td align="center"> Control + A       </td>
-<td align="center"> Start of Line </td>
-</tr>
-<tr>
-<td></td>
-<td align="center"> Control + E       </td>
-<td align="center"> End of Line   </td>
-</tr>
-<tr>
-<td></td>
-<td align="center"> Control + P       </td>
-<td align="center"> Previous Line </td>
-</tr>
-<tr>
-<td></td>
-<td align="center"> Control + N       </td>
-<td align="center"> Next Line     </td>
-</tr>
-<tr>
-<td></td>
-<td align="center"> Control + F       </td>
-<td align="center"> Move Cursor Forward</td>
-</tr>
-<tr>
-<td></td>
-<td align="center"> Control + B       </td>
-<td align="center"> Move Cursor Backward</td>
-</tr>
-<tr>
-<td></td>
-<td align="center"> Control + V       </td>
-<td align="center"> Scroll Down</td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th style="text-align: center">Keyboard Shortcut</th>
+      <th style="text-align: center">Command</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Control + A</td>
+      <td style="text-align: center">Start of Line</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Control + E</td>
+      <td style="text-align: center">End of Line</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Control + P</td>
+      <td style="text-align: center">Previous Line</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Control + N</td>
+      <td style="text-align: center">Next Line</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Control + F</td>
+      <td style="text-align: center">Move Cursor Forward</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Control + B</td>
+      <td style="text-align: center">Move Cursor Backward</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Control + V</td>
+      <td style="text-align: center">Scroll Down</td>
+    </tr>
+  </tbody>
 </table>
 
-
-<h2>Editing</h2>
+<h2 id="editing">Editing</h2>
 
 <table>
-<thead>
-<tr>
-<th></th>
-<th> Keyboard Shortcut </th>
-<th align="center"> Command </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td> Control + K       </td>
-<td align="center"> Cut From Cursor to End of Line (Cut)</td>
-</tr>
-<tr>
-<td></td>
-<td> Control + Y       </td>
-<td align="center"> Paste The Text Removed By Control + K </td>
-</tr>
-<tr>
-<td></td>
-<td> Control + H       </td>
-<td align="center"> Backspace </td>
-</tr>
-<tr>
-<td></td>
-<td> Control + D       </td>
-<td align="center"> Forward Backspace</td>
-</tr>
-<tr>
-<td></td>
-<td> Control + T       </td>
-<td align="center"> Transpose letters *</td>
-</tr>
-<tr>
-<td></td>
-<td> Control + O       </td>
-<td align="center"> Insert Line Break </td>
-</tr>
-</tbody>
+  <thead>
+    <tr>
+      <th>Keyboard Shortcut</th>
+      <th style="text-align: center">Command</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Control + K</td>
+      <td style="text-align: center">Cut From Cursor to End of Line (Cut)</td>
+    </tr>
+    <tr>
+      <td>Control + Y</td>
+      <td style="text-align: center">Paste The Text Removed By Control + K</td>
+    </tr>
+    <tr>
+      <td>Control + H</td>
+      <td style="text-align: center">Backspace</td>
+    </tr>
+    <tr>
+      <td>Control + D</td>
+      <td style="text-align: center">Forward Backspace</td>
+    </tr>
+    <tr>
+      <td>Control + T</td>
+      <td style="text-align: center">Transpose letters *</td>
+    </tr>
+    <tr>
+      <td>Control + O</td>
+      <td style="text-align: center">Insert Line Break</td>
+    </tr>
+  </tbody>
 </table>
 
-
-<br/>
-
+<p><br /></p>
 
 <p>* If the cursor is:</p>
 
 <ul>
-<li>between two letters, the two letters will be switched.</li>
-<li>is in a white space between two words, the two words will be switched.</li>
+  <li>between two letters, the two letters will be switched. </li>
+  <li>is in a white space between two words, the two words will be switched.</li>
 </ul>
-
 
 <hr />
 
@@ -286,6 +296,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/">Count Unique String Permutations With Repeated/Duplicated Characters</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/20/latex-test/">Latex Test!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/17/arraylist-vs-linkedlist/">ArrayList vs LinkedList</a>
       </li>
     
@@ -295,14 +313,6 @@
     
       <li class="post">
         <a href="/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/">Using Disqus for Comments on Your Octopress</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/large-text-splitter/">Large Text Splitter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/sharing-content-quickly/">Sharing Content Quickly</a>
       </li>
     
   </ul>

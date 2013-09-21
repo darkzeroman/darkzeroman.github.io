@@ -12,6 +12,35 @@
   <meta name="description" content="My brother has just started college and I recommended that he should get a Macbook Pro because I have had a blast using one for the past one year. &hellip;">
   
 
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+  </script>
+
+  <script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -105,35 +134,33 @@
 
 <div class="entry-content"><p>My brother has just started college and I recommended that he should get a Macbook Pro because I have had a blast using one for the past one year. Also, he is interested in Computer Science and said he would like tips to know what to install for a good workstation setup.</p>
 
-<p>Before an internship I primarily used a Linux box and was comfortable using the command line, but always had trouble with various things such as sound, turning on after a sleep, and performance issues on my previous Linux laptop. This might have been due to the fact that the machine wasn&rsquo;t the highest quality machine and might not have been a good fit for Ubuntu.</p>
+<p>Before an internship I primarily used a Linux box and was comfortable using the command line, but always had trouble with various things such as sound, turning on after a sleep, and performance issues on my previous Linux laptop. This might have been due to the fact that the machine wasn’t the highest quality machine and might not have been a good fit for Ubuntu.</p>
 
 <p>As I was making the list I figured it would be good to put up the list online so others can look at my setup and decide whether they want to use any of the tools I do.</p>
 
-<h3>General OSX Desktop Tools:</h3>
+<h3 id="general-osx-desktop-tools">General OSX Desktop Tools:</h3>
 
 <ul>
-<li>Toggl</li>
-<li>Yoink</li>
-<li>Bartender</li>
-<li>Flux</li>
-<li>gfxCardStatus</li>
-<li>Alfred</li>
-<li>TotalFinder</li>
-<li>Spectacle</li>
-<li>KeyRemap4Macbook</li>
+  <li>Toggl</li>
+  <li>Yoink</li>
+  <li>Bartender</li>
+  <li>Flux</li>
+  <li>gfxCardStatus</li>
+  <li>Alfred</li>
+  <li>TotalFinder</li>
+  <li>Spectacle</li>
+  <li>KeyRemap4Macbook</li>
 </ul>
 
-
-<h3>Development Tools</h3>
+<h3 id="development-tools">Development Tools</h3>
 
 <ul>
-<li>MacVim</li>
-<li>Oh My Zsh</li>
-<li>DBeaver</li>
-<li>Sublime Text</li>
-<li>Iterm2</li>
+  <li>MacVim</li>
+  <li>Oh My Zsh</li>
+  <li>DBeaver</li>
+  <li>Sublime Text</li>
+  <li>Iterm2</li>
 </ul>
-
 
 <p>I have remapped the Caps Lock to Control and will have a post discussing how I have made my life better with remapping keys.</p>
 </div>
@@ -199,6 +226,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/">Count Unique String Permutations With Repeated/Duplicated Characters</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/20/latex-test/">Latex Test!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/17/arraylist-vs-linkedlist/">ArrayList vs LinkedList</a>
       </li>
     
@@ -208,14 +243,6 @@
     
       <li class="post">
         <a href="/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/">Using Disqus for Comments on Your Octopress</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/large-text-splitter/">Large Text Splitter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/sharing-content-quickly/">Sharing Content Quickly</a>
       </li>
     
   </ul>

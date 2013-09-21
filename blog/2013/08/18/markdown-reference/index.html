@@ -9,10 +9,38 @@
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="What is Markdown good for?
-Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is &hellip;">
+  <meta name="description" content="What is Markdown good for? Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is &hellip;">
   
 
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+  </script>
+
+  <script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -104,84 +132,79 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   </header>
 
 
-<div class="entry-content"><p>What is Markdown good for?
+<div class="entry-content"><p>What is Markdown good for? 
 Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is converted into valid HTML. Some examples are GitHub Repository README and how I write these blog posts.</p>
 
 <p>The following is a quick overview of the most common Markdown syntax.</p>
 
-<h2>Headers</h2>
+<h2 id="headers">Headers</h2>
 
-<p>  <code># Level one header</code></p>
+<p><code># Level one header</code></p>
 
-<p>  <code>## Level two header</code></p>
+<p><code>## Level two header</code></p>
 
-<p>  <code>### Level three header</code></p>
+<p><code>### Level three header</code></p>
 
-<p>  &hellip; Up to six hashes are supported</p>
+<p>… Up to six hashes are supported</p>
 
-<p>I would show an example, but it doesn&rsquo;t work well because I&rsquo;m already using Markdown for this blog post!</p>
+<p>I would show an example, but it doesn’t work well because I’m already using Markdown for this blog post!</p>
 
-<h2>Links</h2>
+<h2 id="links">Links</h2>
 
-<p>  <code>[This is a link](http://www.darkzeroman.github.io)</code></p>
+<p><code>[This is a link](http://www.darkzeroman.github.io)</code></p>
 
-<p>  <a href="http://www.darkzeroman.github.io">This is a link</a></p>
+<p><a href="http://www.darkzeroman.github.io">This is a link</a></p>
 
-<h2>Lists</h2>
+<h2 id="lists">Lists</h2>
 
-<h3>Unordered Lists</h3>
+<h3 id="unordered-lists">Unordered Lists</h3>
 
 <p>Use any of the following: <code>*, +, -</code></p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>* Item 1
-</span><span class='line'>* Item 2
-</span><span class='line'>* Item 3</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">* Item 1
+</span><span class="line">* Item 2
+</span><span class="line">* Item 3</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <ul>
-<li>This</li>
-<li>is</li>
-<li>a list</li>
+  <li>This</li>
+  <li>is</li>
+  <li>a list</li>
 </ul>
 
+<h3 id="ordered-lists">Ordered Lists</h3>
 
-<h3>Ordered Lists</h3>
+<p>Ordered lists use number followed by period. </p>
 
-<p>Ordered lists use number followed by period.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>1. with
-</span><span class='line'>2. numbers</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">1. with
+</span><span class="line">2. numbers</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <ol>
-<li>with</li>
-<li>numbers</li>
+  <li>with</li>
+  <li>numbers</li>
 </ol>
 
+<h2 id="formattingemphasis">Formatting/Emphasis</h2>
 
-<h2>Formatting/Emphasis</h2>
+<p><code>_italic_ or *italic*</code></p>
 
-<p>  <code>_italic_ or *italic*</code></p>
+<p><em>italic</em></p>
 
-<p>  <em>italic</em></p>
+<p><code>__bold__ or **bold**</code></p>
 
-<p>  <code>__bold__ or **bold**</code></p>
-
-<p>  <strong>bold</strong></p>
+<p><strong>bold</strong></p>
 
 <hr />
 
-<h2>More Resources:</h2>
+<h2 id="more-resources">More Resources:</h2>
 
 <ul>
-<li><a href="http://daringfireball.net/projects/markdown/syntax">Full Markdown Syntax Document</a></li>
+  <li><a href="http://daringfireball.net/projects/markdown/syntax">Full Markdown Syntax Document</a></li>
 </ul>
-
 </div>
 
 
@@ -245,6 +268,14 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/">Count Unique String Permutations With Repeated/Duplicated Characters</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/20/latex-test/">Latex Test!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/17/arraylist-vs-linkedlist/">ArrayList vs LinkedList</a>
       </li>
     
@@ -254,14 +285,6 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
     
       <li class="post">
         <a href="/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/">Using Disqus for Comments on Your Octopress</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/large-text-splitter/">Large Text Splitter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/sharing-content-quickly/">Sharing Content Quickly</a>
       </li>
     
   </ul>

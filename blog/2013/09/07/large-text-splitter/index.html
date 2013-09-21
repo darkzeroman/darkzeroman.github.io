@@ -9,9 +9,38 @@
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="Problem While reading articles sometimes the writer doesn&rsquo;t split the text up in paragraphs which can be a pain to try to read. Paragraphs are &hellip;">
+  <meta name="description" content="Problem While reading articles sometimes the writer doesn’t split the text up in paragraphs which can be a pain to try to read. Paragraphs are a &hellip;">
   
 
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+  </script>
+
+  <script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -103,13 +132,13 @@
   </header>
 
 
-<div class="entry-content"><h2>Problem</h2>
+<div class="entry-content"><h2 id="problem">Problem</h2>
 
-<p>While reading articles sometimes the writer doesn&rsquo;t split the text up in paragraphs which can be a pain to try to read.</p>
+<p>While reading articles sometimes the writer doesn’t split the text up in paragraphs which can be a pain to try to read.</p>
 
-<p>Paragraphs are a great way of helping a reader have landmarks in a large amount of text. Also they serve as great separators that tell the reader I&rsquo;m ending on the previous idea and beginning a new one.</p>
+<p>Paragraphs are a great way of helping a reader have landmarks in a large amount of text. Also they serve as great separators that tell the reader I’m ending on the previous idea and beginning a new one.</p>
 
-<h2>Solution</h2>
+<h2 id="solution">Solution</h2>
 
 <p>Some sort of extension for a browser with which a user can select a block of text and have the text automatically split into paragrahs.</p>
 
@@ -183,6 +212,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/">Count Unique String Permutations With Repeated/Duplicated Characters</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/20/latex-test/">Latex Test!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/17/arraylist-vs-linkedlist/">ArrayList vs LinkedList</a>
       </li>
     
@@ -192,14 +229,6 @@
     
       <li class="post">
         <a href="/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/">Using Disqus for Comments on Your Octopress</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/large-text-splitter/">Large Text Splitter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/sharing-content-quickly/">Sharing Content Quickly</a>
       </li>
     
   </ul>

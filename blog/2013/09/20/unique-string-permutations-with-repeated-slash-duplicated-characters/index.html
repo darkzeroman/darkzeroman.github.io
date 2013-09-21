@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Removing All Pip Packages - A Place For Me To Leave My Thoughts</title>
+  <title>Count Unique String Permutations with Repeated/Duplicated Characters - A Place For Me To Leave My Thoughts</title>
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="If you need to remove all pip packages currently installed. 1
-pip freeze | xargs pip uninstall -y This is more useful than you think!
-">
+  <meta name="description" content="Problem How do you find the number of unique words from a collection of letters contain duplicates? Word here represents a specific orderings of &hellip;">
   
 
   <script type="text/x-mathjax-config">
@@ -49,7 +47,7 @@ pip freeze | xargs pip uninstall -y This is more useful than you think!
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/17/removing-pip-packages">
+  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A Place For Me To Leave My Thoughts" type="application/atom+xml">
@@ -111,7 +109,7 @@ pip freeze | xargs pip uninstall -y This is more useful than you think!
   
   <header>
     
-      <h1 class="entry-title">Removing All Pip Packages</h1>
+      <h1 class="entry-title">Count Unique String Permutations With Repeated/Duplicated Characters</h1>
     
     
       <p class="meta">
@@ -127,20 +125,96 @@ pip freeze | xargs pip uninstall -y This is more useful than you think!
   
 
 
-<time datetime="2013-08-17T16:42:00-04:00" pubdate data-updated="true">Aug 17<span>th</span>, 2013</time>
+<time datetime="2013-09-20T20:51:00-04:00" pubdate data-updated="true">Sep 20<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>If you need to remove all pip packages currently installed.</p>
+<div class="entry-content"><h1 id="problem">Problem</h1>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="n">pip</span> <span class="n">freeze</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">pip</span> <span class="n">uninstall</span> <span class="o">-</span><span class="n">y</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>How do you find the number of unique words from a collection of letters contain duplicates?</p>
 
-<p>This is more useful than you think!</p>
+<p>Word here represents a specific orderings of letters.</p>
+
+<p>Example: if a collection of letters is [a,b,b], possible words are aab, aba, baa.</p>
+
+<h1 id="examples">Examples</h1>
+
+<p>Input: RRD</p>
+
+<p>Output: 3, options are RRD, RDR, DRR</p>
+
+<p>Input: RRDD</p>
+
+<p>Output: 6, RDDR, DRRD, RDRD, DRDR, RRDD, DDRR</p>
+
+<h1 id="why-cant-we-use-other-formulas">Why Can’t We Use Other Formulas?</h1>
+
+<p>Let’s suppose the collection of letters is: RRD.</p>
+
+<p>To differentiate between the two Rs, let’s denote them as R1 and R2.</p>
+
+<h3 id="permutation-formula-n">Permutation Formula (n!)</h3>
+
+<p>It doesn’t make sense to use the permutation formula, because even though R1-R2-D is a different permutation from R2-R1-D, it is the same word (using our definition from before).</p>
+
+<h3 id="combination-formula-nck">Combination Formula (nCk)</h3>
+
+<p>But can we use the combinations formula? Kind of, we will use a related formula, but we can’t use it directly at the moment. Why?</p>
+
+<p>Because what are we choosing? How does this formula work for repeated/duplicated letters? We’re not choosing 2 letters from all the letters, we want to make unique words!</p>
+
+<h1 id="so-how-to-think-about-this-problem">So How To Think About This Problem?</h1>
+
+<h3 id="defining-the-formula">Defining the formula</h3>
+<p>Let’s think about it this way, C is the number of unique letter combinations, or unique words.</p>
+
+<p>But remember, for each C (aka unique word), if there are repeated letters, there can be more that one permutation which will still yield the same word. We need to account for that.</p>
+
+<p>Next, there is a calculable total number of permutations, which can be found by the permutation formula, n!, where n is the size of the collection of letters.</p>
+
+<p>So with that in mind, think about following equation and validate it to yourself:</p>
+
+<p>(Number of unique letter combinations, or C) x (All of the permutations of C which result in the same word) = Total number of permutations</p>
+
+<p>or </p>
+
+<p>C * Number_Perms_For_Each = n!</p>
+
+<h2 id="number-of-permutations-for-each-unique-word">Number of Permutations for Each Unique Word</h2>
+
+<p>Let’s think about the collection of letters as [D1, D2, R1, R2] and word DDRR.</p>
+
+<p>We want to come up with the number of permutations of the letters that yield the same word. </p>
+
+<p>The valid permutations: [D2, D1, R1, R2], [D1, D2, R2, R1], [D1, D2, R2, R1], [D2, D1, R2, R1].</p>
+
+<p>One way to think about this is that the number of ways to switch letters and have the same word is to perform a permutation for each letter group i, which is equal to numLetters(i) and then multiplying all of these together.</p>
+
+<h3 id="back-to-the-formula">Back to the formula</h3>
+
+<p>Our unknown is C, we can calculate the n!, and finally we can find the number of permutations of C because we know it will contain a specified number of letters types and their frequency.</p>
+
+<p>So the formula turns into:</p>
+
+<p>C = n! / Number_Perms_For_Each</p>
+
+<h2 id="example">Example</h2>
+
+<p>Say we have RRDD, we know R should show up twice and D should show up twice.</p>
+
+<p>For each combination, there are many permutations of letters that result in the same word, this will be 2!2!</p>
+
+<p>C = 4! / ( 2! * 2!) = 4 * 3 / 2 = 2 * 3 = 6</p>
+
+<p>Which makes sense, since the valid six unique words are: RRDD, DDRR, RDDR, DRRD, RDRD, DRDR.</p>
+
+<p>I want to think about this a bit more.</p>
+
+<p>Though, honestly this is just a multinomial expansion.</p>
+
 </div>
 
 
@@ -163,7 +237,7 @@ pip freeze | xargs pip uninstall -y This is more useful than you think!
   
 
 
-<time datetime="2013-08-17T16:42:00-04:00" pubdate data-updated="true">Aug 17<span>th</span>, 2013</time>
+<time datetime="2013-09-20T20:51:00-04:00" pubdate data-updated="true">Sep 20<span>th</span>, 2013</time>
       
 
 
@@ -171,7 +245,7 @@ pip freeze | xargs pip uninstall -y This is more useful than you think!
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/17/removing-pip-packages/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/17/removing-pip-packages/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/" >Tweet</a>
   
   
   
@@ -180,10 +254,8 @@ pip freeze | xargs pip uninstall -y This is more useful than you think!
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/17/first-post/" title="Previous Post: First Post">&laquo; First Post</a>
+        <a class="basic-alignment left" href="/blog/2013/09/20/latex-test/" title="Previous Post: Latex Test!">&laquo; Latex Test!</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/08/18/markdown-reference/" title="Next Post: Markdown Reference">Markdown Reference &raquo;</a>
       
     </p>
   </footer>
@@ -278,8 +350,8 @@ pip freeze | xargs pip uninstall -y This is more useful than you think!
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://darkzeroman.github.io/blog/2013/08/17/removing-pip-packages/';
-        var disqus_url = 'http://darkzeroman.github.io/blog/2013/08/17/removing-pip-packages/';
+        var disqus_identifier = 'http://darkzeroman.github.io/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/';
+        var disqus_url = 'http://darkzeroman.github.io/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/';
         var disqus_script = 'embed.js';
       
     (function () {

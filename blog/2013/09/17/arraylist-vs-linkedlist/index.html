@@ -9,9 +9,38 @@
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="I&rsquo;ve been reviewing some material for interviews and something new I learned today is the difference between ArrayList and LinkedList. The Big &hellip;">
+  <meta name="description" content="I’ve been reviewing some material for interviews and something new I learned today is the difference between ArrayList and LinkedList. The Big O &hellip;">
   
 
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+  </script>
+
+  <script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -103,43 +132,40 @@
   </header>
 
 
-<div class="entry-content"><p>I&rsquo;ve been reviewing some material for interviews and something new I learned today is the difference between ArrayList and LinkedList.</p>
+<div class="entry-content"><p>I’ve been reviewing some material for interviews and something new I learned today is the difference between ArrayList and LinkedList.</p>
 
-<h2>The Big O Notes</h2>
+<h2 id="the-big-o-notes">The Big O Notes</h2>
 
 <p>For just review, the Big O for the operations for each data structure is:</p>
 
 <p>For LinkedList</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>* get is O(n)
-</span><span class='line'>* add is O(1)
-</span><span class='line'>* remove is O(n)
-</span><span class='line'>* Iterator.remove is O(1)</span></code></pre></td></tr></table></div></figure>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">* get is O(n)
+</span><span class="line">* add is O(1)
+</span><span class="line">* remove is O(n)
+</span><span class="line">* Iterator.remove is O(1)</span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<p>For ArrayList
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">* get is O(1)
+</span><span class="line">* add is O(1) amortized, but O(n)
+</span><span class="line">* remove is O(n)</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;</p>
 
-<p>For ArrayList</p>
+<h2 id="but-why-the-difference">But why the difference?</h2>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>* get is O(1)
-</span><span class='line'>* add is O(1) amortized, but O(n)
-</span><span class='line'>* remove is O(n)</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>But why the difference?</h2>
-
-<p>Well, something that&rsquo;s obvious to me now, but wasn&rsquo;t before is that <strong>Array</strong>List is actually backed by an array.</p>
+<p>Well, something that’s obvious to me now, but wasn’t before is that <strong>Array</strong>List is actually backed by an array. </p>
 
 <p>So what does that mean? That means that on average, adding an element to the ArrayList is constant time, since it just adds it to the next empty index. But there can be a case when the backing array is full and it needs to be made bigger. So then a new array is made, the elements are copied over, which leads to an operation of O(n).</p>
 
 <p>And now the reason why remove is O(n) makes sense, if the first element was to be removed, the whole array must be shifted.</p>
 
-<h2>Conclusions</h2>
+<h2 id="conclusions">Conclusions</h2>
 
 <p>So when does LinkedList make sense? When you want to quickly add something to a data structure and the difference between ArrayList is that the operation is always O(1) instead of amortized O(1).</p>
 
@@ -147,7 +173,7 @@
 
 <p>By the way, an alternative for LinkedList is ArrayDeque which gives constant operations for adding/removing at both ends of the queue. I was first exposed to this data structure in Python, where it was called deque.</p>
 
-<h2>Update</h2>
+<h2 id="update">Update</h2>
 
 <p>I recently added notes for Java Collections on my GitHub Notes Repository. <a href="https://github.com/darkzeroman/Notes/blob/master/JavaCollections.md">Check it out!</a></p>
 </div>
@@ -192,6 +218,8 @@
         <a class="basic-alignment left" href="/blog/2013/09/15/android-styling-guide/" title="Previous Post: Android Styling Guide">&laquo; Android Styling Guide</a>
       
       
+        <a class="basic-alignment right" href="/blog/2013/09/20/latex-test/" title="Next Post: Latex Test!">Latex Test! &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -211,6 +239,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/">Count Unique String Permutations With Repeated/Duplicated Characters</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/20/latex-test/">Latex Test!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/17/arraylist-vs-linkedlist/">ArrayList vs LinkedList</a>
       </li>
     
@@ -220,14 +256,6 @@
     
       <li class="post">
         <a href="/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/">Using Disqus for Comments on Your Octopress</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/large-text-splitter/">Large Text Splitter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/sharing-content-quickly/">Sharing Content Quickly</a>
       </li>
     
   </ul>

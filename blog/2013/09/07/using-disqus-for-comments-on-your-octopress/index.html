@@ -9,10 +9,38 @@
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="Want to know how to get comments on your Octopress blog? It&rsquo;s not difficult at all! Steps Go on over to disqus.com and make an account.
-Click &hellip;">
+  <meta name="description" content="Want to know how to get comments on your Octopress blog? It’s not difficult at all! Steps Go on over to disqus.com and make an account. Click on “ &hellip;">
   
 
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+  </script>
+
+  <script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -106,49 +134,57 @@ Click &hellip;">
 
 <div class="entry-content"><p>Want to know how to get comments on your Octopress blog?</p>
 
-<p>It&rsquo;s not difficult at all!</p>
+<p>It’s not difficult at all!</p>
 
-<h1>Steps</h1>
-
-<ol>
-<li><p>Go on over to <a href="http://www.disqus.com">disqus.com</a> and make an account.</p></li>
-<li><p>Click on &ldquo;Universal&rdquo; for the type of blog you are using.</p></li>
-<li><p>Open <code>_config.yml</code> in your root directory for your Octopress blog.</p></li>
-<li><p>Find the line that looks like the following:</p></li>
-</ol>
-
-
-<figure class='code'><figcaption><span>_config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="c1"># Disqus Comments</span>
-</span><span class='line'><span class="l-Scalar-Plain">disqus_short_name</span><span class="p-Indicator">:</span>
-</span><span class='line'><span class="l-Scalar-Plain">disqus_show_comment_count</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<h1 id="steps">Steps</h1>
 
 <ol>
-<li><p>Look at the Disqus short name (mine is darkzeroman), use the following image as a guide for where to look.
-<img src="http://i.imgur.com/l9SwGSw.png" alt="Disqus Screenshot" /></p></li>
-<li><p>Copy that over to the <code>_config.yml</code> entry for <code>disqus_short_name</code> you saw in Step 4. So mine looks like:</p></li>
+  <li>
+    <p>Go on over to <a href="http://www.disqus.com">disqus.com</a> and make an account.</p>
+  </li>
+  <li>
+    <p>Click on “Universal” for the type of blog you are using.</p>
+  </li>
+  <li>
+    <p>Open <code>_config.yml</code> in your root directory for your Octopress blog.</p>
+  </li>
+  <li>
+    <p>Find the line that looks like the following:</p>
+  </li>
 </ol>
 
-
-<figure class='code'><figcaption><span>_config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="c1"># Disqus Comments</span>
-</span><span class='line'><span class="l-Scalar-Plain">disqus_short_name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">darkzeroman</span>
-</span><span class='line'><span class="l-Scalar-Plain">disqus_show_comment_count</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>_config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="yaml"><span class="line"><span class="c1"># Disqus Comments</span>
+</span><span class="line"><span class="l-Scalar-Plain">disqus_short_name</span><span class="p-Indicator">:</span>
+</span><span class="line"><span class="l-Scalar-Plain">disqus_show_comment_count</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <ol>
-<li>You&rsquo;re done!</li>
+  <li>
+    <p>Look at the Disqus short name (mine is darkzeroman), use the following image as a guide for where to look.
+<img src="http://i.imgur.com/l9SwGSw.png" alt="Disqus Screenshot" /></p>
+  </li>
+  <li>
+    <p>Copy that over to the <code>_config.yml</code> entry for <code>disqus_short_name</code> you saw in Step 4. So mine looks like:</p>
+  </li>
 </ol>
 
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>_config.yml</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="yaml"><span class="line"><span class="c1"># Disqus Comments</span>
+</span><span class="line"><span class="l-Scalar-Plain">disqus_short_name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">darkzeroman</span>
+</span><span class="line"><span class="l-Scalar-Plain">disqus_show_comment_count</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">false</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ol>
+  <li>You’re done!</li>
+</ol>
 
 <p>Have fun!</p>
+
 </div>
 
 
@@ -212,6 +248,14 @@ Click &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/">Count Unique String Permutations With Repeated/Duplicated Characters</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/20/latex-test/">Latex Test!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/17/arraylist-vs-linkedlist/">ArrayList vs LinkedList</a>
       </li>
     
@@ -221,14 +265,6 @@ Click &hellip;">
     
       <li class="post">
         <a href="/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/">Using Disqus for Comments on Your Octopress</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/large-text-splitter/">Large Text Splitter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/sharing-content-quickly/">Sharing Content Quickly</a>
       </li>
     
   </ul>

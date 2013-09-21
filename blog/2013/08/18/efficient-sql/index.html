@@ -12,6 +12,35 @@
   <meta name="description" content="During one of my interviews I was asked whether I knew how to make SQL queries more efficient. At that point in time I had barely used SQL and had to &hellip;">
   
 
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+  </script>
+
+  <script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -103,61 +132,56 @@
   </header>
 
 
-<div class="entry-content"><p>During one of my interviews I was asked whether I knew how to make SQL queries more efficient. At that point in time I had barely used SQL and had to ask the interviewer to move on to another subject.</p>
+<div class="entry-content"><p>During one of my interviews I was asked whether I knew how to make SQL queries more efficient. At that point in time I had barely used SQL and had to ask the interviewer to move on to another subject. </p>
 
-<p>But since I have started to use SQL in the <a href="http://dssg.io">DSSG Program</a> I&rsquo;ve started to deal with SQL queries that can possibly take a while to run. And I started to wonder how to make SQL queries more efficient and I found this <a href="http://www.databasejournal.com/features/mssql/article.php/1437391/Transact-SQL-Optimization-Tips.htm">article</a>.</p>
+<p>But since I have started to use SQL in the <a href="http://dssg.io">DSSG Program</a> I’ve started to deal with SQL queries that can possibly take a while to run. And I started to wonder how to make SQL queries more efficient and I found this <a href="http://www.databasejournal.com/features/mssql/article.php/1437391/Transact-SQL-Optimization-Tips.htm">article</a>.</p>
 
 <p>The following is a quick summary of link.</p>
 
-<h2>Tips to Speed Up Queries</h2>
+<h2 id="tips-to-speed-up-queries">Tips to Speed Up Queries</h2>
 
 <ul>
-<li><strong>Try to restrict the queries result set by using the WHERE clause.</strong></li>
+  <li><strong>Try to restrict the queries result set by using the WHERE clause.</strong></li>
 </ul>
-
 
 <p>This one seems obvious.</p>
 
 <ul>
-<li><strong>Try to restrict the queries result st by returning only the particular columns from the table, not all the table&rsquo;s columns.</strong></li>
+  <li><strong>Try to restrict the queries result st by returning only the particular columns from the table, not all the table’s columns.</strong></li>
 </ul>
-
 
 <p>Another one that seems obvious.</p>
 
 <ul>
-<li><strong>If you need to return the total table&rsquo;s row count, use an alternative instead of <code>SELECT COUNT(*)</code> statement.</strong></li>
+  <li><strong>If you need to return the total table’s row count, use an alternative instead of <code>SELECT COUNT(*)</code> statement.</strong></li>
 </ul>
 
-
-<p>This one is interesting because I didn&rsquo;t know there were alternatives, I usually do run the <code>SELECT COUNT(*)</code> statement! I will update how to get the table count in Postgres soon.</p>
+<p>This one is interesting because I didn’t know there were alternatives, I usually do run the <code>SELECT COUNT(*)</code> statement! I will update how to get the table count in Postgres soon.</p>
 
 <ul>
-<li><strong>Try to avoid the HAVING clause whenever possible.</strong></li>
+  <li><strong>Try to avoid the HAVING clause whenever possible.</strong></li>
 </ul>
 
-
-<p>This is an interesting one, I wouldn&rsquo;t think the HAVING clause would be that computationally expensive, but a good point is made that if it&rsquo;s possible to filter out unneeded values with a WHERE clause, that should be used.</p>
+<p>This is an interesting one, I wouldn’t think the HAVING clause would be that computationally expensive, but a good point is made that if it’s possible to filter out unneeded values with a WHERE clause, that should be used.</p>
 
 <ul>
-<li><strong>Use SELECT statements with LIMIT keyword if you need to return only the first n rows.</strong></li>
+  <li><strong>Use SELECT statements with LIMIT keyword if you need to return only the first n rows.</strong></li>
 </ul>
-
 
 <p>Makes sense, I do this quite often when I am testing to make sure my query is running as expected. Usually used to run join on a subset before running it on the whole data set.</p>
 
 <ul>
-<li><strong>Try to use UNION ALL statement stead of UNION.</strong></li>
+  <li><strong>Try to use UNION ALL statement stead of UNION.</strong></li>
 </ul>
-
 
 <p>UNION ALL does not look for duplicates while UNION does look for duplicates whether they exist or not.</p>
 
 <hr />
 
-<p>Something I&rsquo;ve learned about recently is Postgres&#8217; EXPLAIN and ANALYZE. More information is to be added soon.</p>
+<p>Something I’ve learned about recently is Postgres’ EXPLAIN and ANALYZE. More information is to be added soon.</p>
 
 <p>I will add more SQL efficiency tips as I come across them!</p>
+
 </div>
 
 
@@ -221,6 +245,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/">Count Unique String Permutations With Repeated/Duplicated Characters</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/20/latex-test/">Latex Test!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/17/arraylist-vs-linkedlist/">ArrayList vs LinkedList</a>
       </li>
     
@@ -230,14 +262,6 @@
     
       <li class="post">
         <a href="/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/">Using Disqus for Comments on Your Octopress</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/large-text-splitter/">Large Text Splitter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/sharing-content-quickly/">Sharing Content Quickly</a>
       </li>
     
   </ul>

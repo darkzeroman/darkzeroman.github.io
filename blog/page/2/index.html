@@ -9,10 +9,38 @@
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="What is Markdown good for?
-Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is &hellip;">
+  <meta name="description" content="During one of my interviews I was asked whether I knew how to make SQL queries more efficient. At that point in time I had barely used SQL and had to &hellip;">
   
 
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+  </script>
+
+  <script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -84,6 +112,147 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/08/18/efficient-sql/">Efficient SQL (Custom)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-18T18:37:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>During one of my interviews I was asked whether I knew how to make SQL queries more efficient. At that point in time I had barely used SQL and had to ask the interviewer to move on to another subject. </p>
+
+<p>But since I have started to use SQL in the <a href="http://dssg.io">DSSG Program</a> I’ve started to deal with SQL queries that can possibly take a while to run. And I started to wonder how to make SQL queries more efficient and I found this <a href="http://www.databasejournal.com/features/mssql/article.php/1437391/Transact-SQL-Optimization-Tips.htm">article</a>.</p>
+
+<p>The following is a quick summary of link.</p>
+
+<h2 id="tips-to-speed-up-queries">Tips to Speed Up Queries</h2>
+
+<ul>
+  <li><strong>Try to restrict the queries result set by using the WHERE clause.</strong></li>
+</ul>
+
+<p>This one seems obvious.</p>
+
+<ul>
+  <li><strong>Try to restrict the queries result st by returning only the particular columns from the table, not all the table’s columns.</strong></li>
+</ul>
+
+<p>Another one that seems obvious.</p>
+
+<ul>
+  <li><strong>If you need to return the total table’s row count, use an alternative instead of <code>SELECT COUNT(*)</code> statement.</strong></li>
+</ul>
+
+<p>This one is interesting because I didn’t know there were alternatives, I usually do run the <code>SELECT COUNT(*)</code> statement! I will update how to get the table count in Postgres soon.</p>
+
+<ul>
+  <li><strong>Try to avoid the HAVING clause whenever possible.</strong></li>
+</ul>
+
+<p>This is an interesting one, I wouldn’t think the HAVING clause would be that computationally expensive, but a good point is made that if it’s possible to filter out unneeded values with a WHERE clause, that should be used.</p>
+
+<ul>
+  <li><strong>Use SELECT statements with LIMIT keyword if you need to return only the first n rows.</strong></li>
+</ul>
+
+<p>Makes sense, I do this quite often when I am testing to make sure my query is running as expected. Usually used to run join on a subset before running it on the whole data set.</p>
+
+<ul>
+  <li><strong>Try to use UNION ALL statement stead of UNION.</strong></li>
+</ul>
+
+<p>UNION ALL does not look for duplicates while UNION does look for duplicates whether they exist or not.</p>
+
+<hr />
+
+<p>Something I’ve learned about recently is Postgres’ EXPLAIN and ANALYZE. More information is to be added soon.</p>
+
+<p>I will add more SQL efficiency tips as I come across them!</p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/18/js-slash-node-build-system-for-sublime/">Javascript/Node Build System for Sublime</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-18T16:56:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>To be able to build Javascript in Sublime Text, it’s necessary to add a new Build System.</p>
+
+<p>To be able to do that, it’s necessary to first have Node installed, so head over to <a href="http://nodejs.org/download/">Node.js homepage</a> to install node.js first.</p>
+
+<p>With the Sublime Text program open, navigate to <code>Tools</code> -&gt; <code>Build System</code> -&gt; <code>New Build System ...</code></p>
+
+<p>And add the following:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Node.sublime-build</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="p">{</span>
+</span><span class="line">    <span class="s2">&quot;cmd&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;/usr/local/bin/node&quot;</span><span class="p">,</span> <span class="s2">&quot;$file&quot;</span><span class="p">],</span>
+</span><span class="line">    <span class="s2">&quot;working_dir&quot;</span><span class="o">:</span> <span class="s2">&quot;${project_path:${folder}}&quot;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>It might be necessary to adjust the path to node for your own setup.</p>
+
+<p>Now save, restart Sublime Text, and you should be able to build Javascript with Sublime Text!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/08/18/markdown-reference/">Markdown Reference</a></h1>
     
     
@@ -107,84 +276,79 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   </header>
 
 
-  <div class="entry-content"><p>What is Markdown good for?
+  <div class="entry-content"><p>What is Markdown good for? 
 Think of it has a way to write HTML without the messy confusing HTML syntax. Markdown is a simple set of rules that is converted into valid HTML. Some examples are GitHub Repository README and how I write these blog posts.</p>
 
 <p>The following is a quick overview of the most common Markdown syntax.</p>
 
-<h2>Headers</h2>
+<h2 id="headers">Headers</h2>
 
-<p>  <code># Level one header</code></p>
+<p><code># Level one header</code></p>
 
-<p>  <code>## Level two header</code></p>
+<p><code>## Level two header</code></p>
 
-<p>  <code>### Level three header</code></p>
+<p><code>### Level three header</code></p>
 
-<p>  &hellip; Up to six hashes are supported</p>
+<p>… Up to six hashes are supported</p>
 
-<p>I would show an example, but it doesn&rsquo;t work well because I&rsquo;m already using Markdown for this blog post!</p>
+<p>I would show an example, but it doesn’t work well because I’m already using Markdown for this blog post!</p>
 
-<h2>Links</h2>
+<h2 id="links">Links</h2>
 
-<p>  <code>[This is a link](http://www.darkzeroman.github.io)</code></p>
+<p><code>[This is a link](http://www.darkzeroman.github.io)</code></p>
 
-<p>  <a href="http://www.darkzeroman.github.io">This is a link</a></p>
+<p><a href="http://www.darkzeroman.github.io">This is a link</a></p>
 
-<h2>Lists</h2>
+<h2 id="lists">Lists</h2>
 
-<h3>Unordered Lists</h3>
+<h3 id="unordered-lists">Unordered Lists</h3>
 
 <p>Use any of the following: <code>*, +, -</code></p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>* Item 1
-</span><span class='line'>* Item 2
-</span><span class='line'>* Item 3</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">* Item 1
+</span><span class="line">* Item 2
+</span><span class="line">* Item 3</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <ul>
-<li>This</li>
-<li>is</li>
-<li>a list</li>
+  <li>This</li>
+  <li>is</li>
+  <li>a list</li>
 </ul>
 
+<h3 id="ordered-lists">Ordered Lists</h3>
 
-<h3>Ordered Lists</h3>
+<p>Ordered lists use number followed by period. </p>
 
-<p>Ordered lists use number followed by period.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>1. with
-</span><span class='line'>2. numbers</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">1. with
+</span><span class="line">2. numbers</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <ol>
-<li>with</li>
-<li>numbers</li>
+  <li>with</li>
+  <li>numbers</li>
 </ol>
 
+<h2 id="formattingemphasis">Formatting/Emphasis</h2>
 
-<h2>Formatting/Emphasis</h2>
+<p><code>_italic_ or *italic*</code></p>
 
-<p>  <code>_italic_ or *italic*</code></p>
+<p><em>italic</em></p>
 
-<p>  <em>italic</em></p>
+<p><code>__bold__ or **bold**</code></p>
 
-<p>  <code>__bold__ or **bold**</code></p>
-
-<p>  <strong>bold</strong></p>
+<p><strong>bold</strong></p>
 
 <hr />
 
-<h2>More Resources:</h2>
+<h2 id="more-resources">More Resources:</h2>
 
 <ul>
-<li><a href="http://daringfireball.net/projects/markdown/syntax">Full Markdown Syntax Document</a></li>
+  <li><a href="http://daringfireball.net/projects/markdown/syntax">Full Markdown Syntax Document</a></li>
 </ul>
-
 </div>
   
   
@@ -222,10 +386,9 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
 
   <div class="entry-content"><p>If you need to remove all pip packages currently installed.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">pip</span> <span class="n">freeze</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">pip</span> <span class="n">uninstall</span> <span class="o">-</span><span class="n">y</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="python"><span class="line"><span class="n">pip</span> <span class="n">freeze</span> <span class="o">|</span> <span class="n">xargs</span> <span class="n">pip</span> <span class="n">uninstall</span> <span class="o">-</span><span class="n">y</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>This is more useful than you think!</p>
 </div>
@@ -286,6 +449,14 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/">Count Unique String Permutations With Repeated/Duplicated Characters</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/20/latex-test/">Latex Test!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/17/arraylist-vs-linkedlist/">ArrayList vs LinkedList</a>
       </li>
     
@@ -295,14 +466,6 @@ Think of it has a way to write HTML without the messy confusing HTML syntax. Mar
     
       <li class="post">
         <a href="/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/">Using Disqus for Comments on Your Octopress</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/large-text-splitter/">Large Text Splitter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/sharing-content-quickly/">Sharing Content Quickly</a>
       </li>
     
   </ul>

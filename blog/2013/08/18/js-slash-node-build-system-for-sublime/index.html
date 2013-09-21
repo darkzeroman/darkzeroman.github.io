@@ -9,9 +9,38 @@
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="To be able to build Javascript in Sublime Text, it&rsquo;s necessary to add a new Build System. To be able to do that, it&rsquo;s necessary to first &hellip;">
+  <meta name="description" content="To be able to build Javascript in Sublime Text, it’s necessary to add a new Build System. To be able to do that, it’s necessary to first have Node &hellip;">
   
 
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  });
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+  </script>
+
+  <script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -103,24 +132,23 @@
   </header>
 
 
-<div class="entry-content"><p>To be able to build Javascript in Sublime Text, it&rsquo;s necessary to add a new Build System.</p>
+<div class="entry-content"><p>To be able to build Javascript in Sublime Text, it’s necessary to add a new Build System.</p>
 
-<p>To be able to do that, it&rsquo;s necessary to first have Node installed, so head over to <a href="http://nodejs.org/download/">Node.js homepage</a> to install node.js first.</p>
+<p>To be able to do that, it’s necessary to first have Node installed, so head over to <a href="http://nodejs.org/download/">Node.js homepage</a> to install node.js first.</p>
 
-<p>With the Sublime Text program open, navigate to <code>Tools</code> &ndash;> <code>Build System</code> &ndash;> <code>New Build System ...</code></p>
+<p>With the Sublime Text program open, navigate to <code>Tools</code> -&gt; <code>Build System</code> -&gt; <code>New Build System ...</code></p>
 
 <p>And add the following:</p>
 
-<figure class='code'><figcaption><span>Node.sublime-build</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="s2">&quot;cmd&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;/usr/local/bin/node&quot;</span><span class="p">,</span> <span class="s2">&quot;$file&quot;</span><span class="p">],</span>
-</span><span class='line'>    <span class="s2">&quot;working_dir&quot;</span><span class="o">:</span> <span class="s2">&quot;${project_path:${folder}}&quot;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Node.sublime-build</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="p">{</span>
+</span><span class="line">    <span class="s2">&quot;cmd&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;/usr/local/bin/node&quot;</span><span class="p">,</span> <span class="s2">&quot;$file&quot;</span><span class="p">],</span>
+</span><span class="line">    <span class="s2">&quot;working_dir&quot;</span><span class="o">:</span> <span class="s2">&quot;${project_path:${folder}}&quot;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>It might be necessary to adjust the path to node for your own setup.</p>
 
@@ -188,6 +216,14 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/">Count Unique String Permutations With Repeated/Duplicated Characters</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/20/latex-test/">Latex Test!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/17/arraylist-vs-linkedlist/">ArrayList vs LinkedList</a>
       </li>
     
@@ -197,14 +233,6 @@
     
       <li class="post">
         <a href="/blog/2013/09/07/using-disqus-for-comments-on-your-octopress/">Using Disqus for Comments on Your Octopress</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/large-text-splitter/">Large Text Splitter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/07/sharing-content-quickly/">Sharing Content Quickly</a>
       </li>
     
   </ul>

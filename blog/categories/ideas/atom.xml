@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ideas | A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/blog/categories/ideas/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-09-18T03:09:53-04:00</updated>
+  <updated>2013-09-21T01:08:27-04:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -18,13 +18,13 @@
     <link href="http://darkzeroman.github.io/blog/2013/09/07/large-text-splitter/"/>
     <updated>2013-09-07T16:15:00-04:00</updated>
     <id>http://darkzeroman.github.io/blog/2013/09/07/large-text-splitter</id>
-    <content type="html"><![CDATA[<h2>Problem</h2>
+    <content type="html"><![CDATA[<h2 id="problem">Problem</h2>
 
-<p>While reading articles sometimes the writer doesn&rsquo;t split the text up in paragraphs which can be a pain to try to read.</p>
+<p>While reading articles sometimes the writer doesn’t split the text up in paragraphs which can be a pain to try to read.</p>
 
-<p>Paragraphs are a great way of helping a reader have landmarks in a large amount of text. Also they serve as great separators that tell the reader I&rsquo;m ending on the previous idea and beginning a new one.</p>
+<p>Paragraphs are a great way of helping a reader have landmarks in a large amount of text. Also they serve as great separators that tell the reader I’m ending on the previous idea and beginning a new one.</p>
 
-<h2>Solution</h2>
+<h2 id="solution">Solution</h2>
 
 <p>Some sort of extension for a browser with which a user can select a block of text and have the text automatically split into paragrahs.</p>
 
@@ -37,49 +37,48 @@
     <link href="http://darkzeroman.github.io/blog/2013/09/07/sharing-content-quickly/"/>
     <updated>2013-09-07T13:44:00-04:00</updated>
     <id>http://darkzeroman.github.io/blog/2013/09/07/sharing-content-quickly</id>
-    <content type="html"><![CDATA[<h2>Context</h2>
+    <content type="html"><![CDATA[<h2 id="context">Context</h2>
 
 <p>When I browse Reddit or another similar website there are many images that I want to share with someone. The process currently looks like this:</p>
 
 <ul>
-<li>Copy URL to clipboard</li>
-<li>Paste URL to friend</li>
-<li>Friend clicks URL</li>
-<li>Friend notices funny image</li>
-<li>Repeat above</li>
+  <li>Copy URL to clipboard</li>
+  <li>Paste URL to friend</li>
+  <li>Friend clicks URL</li>
+  <li>Friend notices funny image</li>
+  <li>Repeat above</li>
 </ul>
 
+<h2 id="problem">Problem</h2>
 
-<h2>Problem</h2>
+<p>This process works great when I’m only sharing 1 or 2 images, but sometimes me and my buddy spend a good 10 minutes sending random images to each other and this process becomes inefficient. </p>
 
-<p>This process works great when I&rsquo;m only sharing 1 or 2 images, but sometimes me and my buddy spend a good 10 minutes sending random images to each other and this process becomes inefficient.</p>
-
-<p>I&rsquo;m thinking about building a web app that will dynamically load any type of content for both users.</p>
+<p>I’m thinking about building a web app that will dynamically load any type of content for both users. </p>
 
 <p>The use case is the following:</p>
 
 <ul>
-<li>User 1 sends User 2 a link to the web app</li>
-<li>User 1 can pass a link to the web app, which will load link automatically for User 2</li>
-<li>Both users can automatically load content for each other</li>
+  <li>User 1 sends User 2 a link to the web app</li>
+  <li>User 1 can pass a link to the web app, which will load link automatically for User 2</li>
+  <li>Both users can automatically load content for each other</li>
 </ul>
-
 
 <p>How to build this?</p>
 
-<h2>Solution</h2>
+<h2 id="solution">Solution</h2>
 
-<p>Usually clients use AJAX to poll a server for status updates, but in this case, it would make sense for either the clients communicate directly or the server to push to clients updates.</p>
+<p>Usually clients use AJAX to poll a server for status updates, but in this case, it would make sense for either the clients communicate directly or the server to push to clients updates. </p>
 
-<p>I have looked into browser to browser communication platforms like WebRTC, but I don&rsquo;t feel that is at a usable state for this type of project.</p>
+<p>I have looked into browser to browser communication platforms like WebRTC, but I don’t feel that is at a usable state for this type of project. </p>
 
 <p>For the server to push updates to the client, the options are some sort of web sockets. That leaves two major tools: socket.io and SockJS.</p>
 
 <p>After doing a little bit of Googling it seems the common consensus is that SockJS is better than socket.io.</p>
 
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>This seems to be a pretty easy project to do, it seems like with SockJS lots of the hard implementation details are taken care of. I want to cover the concepts of SockJS in another blog post though!</p>
+
 ]]></content>
   </entry>
   
@@ -88,55 +87,49 @@
     <link href="http://darkzeroman.github.io/blog/2013/09/07/reddit-repost-blocker/"/>
     <updated>2013-09-07T03:50:00-04:00</updated>
     <id>http://darkzeroman.github.io/blog/2013/09/07/reddit-repost-blocker</id>
-    <content type="html"><![CDATA[<p>A large issue with <a href="http://reddit.com">Reddit</a> is that content is regularly submitted again and again (otherwise known as reposting).</p>
+    <content type="html"><![CDATA[<p>A large issue with <a href="http://reddit.com">Reddit</a> is that content is regularly submitted again and again (otherwise known as reposting). </p>
 
 <p>A vocal minority always posts comments about how the image has been posted many times before, sometimes the same day, week, or month.</p>
 
-<p>So I started to think about how I can make a Reddit Enhancement Suite extension that would hide reposts.</p>
+<p>So I started to think about how I can make a Reddit Enhancement Suite extension that would hide reposts. </p>
 
 <p>I started to think about how this would work and there are a few ways I could see this working.</p>
 
-<h2>But first, why?</h2>
+<h2 id="but-first-why">But first, why?</h2>
 
-<h3>Pros</h3>
-
-<ul>
-<li>Reposts suck. An argument that the content on Reddit should be fresh and seeing the same submission over and over would decrease the quality of the website.</li>
-</ul>
-
-
-<h3>Cons</h3>
+<h3 id="pros">Pros</h3>
 
 <ul>
-<li>Reposts are a real part of Reddit, just because something is reposted doesn&rsquo;t mean that there won&rsquo;t be an interesting addition to the discussion a user has never seen before.</li>
-<li>I remember when I used to block the imgur domain using Reddit Enhancement Suite, the extension use to just hide the submissions. So what would happen is that whenever I went to the front page I would only see two actual posts because almost everything was imgur links. For this extension, it would be counter-productive to block most of the submissions from the front page because they are reposts.</li>
+  <li>Reposts suck. An argument that the content on Reddit should be fresh and seeing the same submission over and over would decrease the quality of the website.</li>
 </ul>
 
-
-<h2>One Possible Implementation</h2>
+<h3 id="cons">Cons</h3>
 
 <ul>
-<li>Keep track of all front page posts for a long time (month or so, to start) into a data store (take your pick, mongo or sql)</li>
-<li>The extension checks the url of the post against the database and if it already exists hide the submission post.</li>
+  <li>Reposts are a real part of Reddit, just because something is reposted doesn’t mean that there won’t be an interesting addition to the discussion a user has never seen before.</li>
+  <li>I remember when I used to block the imgur domain using Reddit Enhancement Suite, the extension use to just hide the submissions. So what would happen is that whenever I went to the front page I would only see two actual posts because almost everything was imgur links. For this extension, it would be counter-productive to block most of the submissions from the front page because they are reposts.</li>
 </ul>
 
-
-<h3>Issues:</h3>
+<h2 id="one-possible-implementation">One Possible Implementation</h2>
 
 <ul>
-<li>Getting the data can take a while, but I found other people who have been archiving Reddit data.</li>
-<li>Checking against the data store for a certain URL can take a while, of course hashing can make it easier but eventually collisions can happen.
+  <li>Keep track of all front page posts for a long time (month or so, to start) into a data store (take your pick, mongo or sql)</li>
+  <li>The extension checks the url of the post against the database and if it already exists hide the submission post.</li>
+</ul>
+
+<h3 id="issues">Issues:</h3>
 
 <ul>
-<li>One way to make things faster is to use some sort of hashing strategy that can check different hashtables for a URL. I remember that some data stores reverse a URL to make this easier. For example, the strategy is to store a domain in the format com.vvohra.subdomain so the com&rsquo;s, net&rsquo;s, etc can be stored on different servers to speed up checking of data.</li>
+  <li>Getting the data can take a while, but I found other people who have been archiving Reddit data.</li>
+  <li>Checking against the data store for a certain URL can take a while, of course hashing can make it easier but eventually collisions can happen.
+    <ul>
+      <li>One way to make things faster is to use some sort of hashing strategy that can check different hashtables for a URL. I remember that some data stores reverse a URL to make this easier. For example, the strategy is to store a domain in the format com.vvohra.subdomain so the com’s, net’s, etc can be stored on different servers to speed up checking of data.</li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
 
-
-<h2>Existing Solutions</h2>
-
-<p><a href="http://karmadecay.com">Karma Decay</a> shows which images have been reposted. I think it&rsquo;s similar to TinEye, so it should be able to handle images from different domains and changed sizes. It seems Karma Decay has an extension which allows a user to notice a submission has duplicates.</p>
+<h2 id="existing-solutions">Existing Solutions</h2>
+<p><a href="http://karmadecay.com">Karma Decay</a> shows which images have been reposted. I think it’s similar to TinEye, so it should be able to handle images from different domains and changed sizes. It seems Karma Decay has an extension which allows a user to notice a submission has duplicates.</p>
 
 <p>Another extension I found was <a href="http://node.angryzor.com/~rtytgat/repostblocker/">Repost Blocker</a>, which seems to be exactly what I brainstormed. Looking through the documentation, it seems like this extension uses Karma Decay to check for reposts.</p>
 
