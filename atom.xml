@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-09-21T01:08:27-04:00</updated>
+  <updated>2013-09-21T01:52:34-04:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -78,6 +78,14 @@
 <p>The valid permutations: [D2, D1, R1, R2], [D1, D2, R2, R1], [D1, D2, R2, R1], [D2, D1, R2, R1].</p>
 
 <p>One way to think about this is that the number of ways to switch letters and have the same word is to perform a permutation for each letter group i, which is equal to numLetters(i) and then multiplying all of these together.</p>
+
+<script type="math/tex; mode=display">
+n = n_{0}, n_{0}, n_{0}, n_{1}, n_{1}, ..., n_{k}
+</script>
+
+<script type="math/tex; mode=display">
+\prod^{k}_{i = 0} (num(n_{i}))!
+</script>
 
 <h3 id="back-to-the-formula">Back to the formula</h3>
 

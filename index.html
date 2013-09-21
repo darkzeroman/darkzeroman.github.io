@@ -196,6 +196,14 @@
 
 <p>One way to think about this is that the number of ways to switch letters and have the same word is to perform a permutation for each letter group i, which is equal to numLetters(i) and then multiplying all of these together.</p>
 
+<script type="math/tex; mode=display">
+n = n_{0}, n_{0}, n_{0}, n_{1}, n_{1}, ..., n_{k}
+</script>
+
+<script type="math/tex; mode=display">
+\prod^{k}_{i = 0} (num(n_{i}))!
+</script>
+
 <h3 id="back-to-the-formula">Back to the formula</h3>
 
 <p>Our unknown is C, we can calculate the n!, and finally we can find the number of permutations of C because we know it will contain a specified number of letters types and their frequency.</p>
