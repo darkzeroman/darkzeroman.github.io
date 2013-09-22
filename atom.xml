@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-09-21T01:52:34-04:00</updated>
+  <updated>2013-09-22T11:00:37-04:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -12,6 +12,92 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Rest Overview]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/09/22/rest-overview/"/>
+    <updated>2013-09-22T01:49:00-04:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/09/22/rest-overview</id>
+    <content type="html"><![CDATA[<p>I recently had an interview where we went over REST API design. I really never had any experience in designing APIs, but rather using them. After the interviewer and I talked about ways to design an API I decided I wanted to go back and really think about how to make a proper RESTful interface and the following are the notes that might be helpful for others to glance over when they are thinking about making a REST API. This conversation of RESTful will reference Rails at times because that was my experience with REST and lots of behaviors in Rails make sense once you consider how REST works.</p>
+
+<h2 id="think-nouns">Think Nouns</h2>
+
+<p>If you think about the API endpoints available when using a scaffold in Rails, the types of names associated with these endpoints tend to be nouns for a reason. Which makes sense and follows the guidelines for REST very well.</p>
+
+<p>Also, think plural nouns.</p>
+
+<p>Bad:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">/all_dogs
+</span><span class="line">/list_customers</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Good</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">/dogs
+</span><span class="line">/customers</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="use-parameters">Use Parameters</h2>
+
+<p>Parameters for urls are in the format <code>/noun?name=value&amp;name2=value2</code> and this should be the way to get more information for a REST command that might not fit within the REST-way of doing things. Think about queries which can filter the type of list being asked when using <code>/noun</code> or something similar.</p>
+
+<p>The parameters can be used by using the params object in a controller’s method in Rails.</p>
+
+<p>Examples for parameters: filtering the type of response, deciding what type of data to return, pagination</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">/dogs?fields=name,color,location
+</span><span class="line">/dogs?field=name,color,location&amp;limit=10&amp;offset=20</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Use camel casing for JSON property names.</p>
+
+<h2 id="errors">Errors</h2>
+
+<p>Errors should be handled from the server and they should be returned definitely if something goes wrong and possibly if the query didn’t have an issue.</p>
+
+<p>Error messages are usually in JSON format, the following shows some possible formats.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">type: OAuthException
+</span><span class="line">message: error_message_here</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">status: http_status_code
+</span><span class="line">message: text
+</span><span class="line">code: num
+</span><span class="line">more_info: url</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">code: http_status_code
+</span><span class="line">message: error_message</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="response-format">Response Format</h2>
+
+<p>Sometimes the response needed isn’t normal HTML or text, it could be JSON. Remember in Rails a method can respond in multiple formats, one of them could be JSON. </p>
+
+<p>So for a client to request a response to a query in json, the client can either append a parameter, add <code>.json</code> to the end of the noun, or put <code>application/json</code> in the accept type in the header.</p>
+
+<h2 id="non-nouns">Non-Nouns</h2>
+
+<p>Use verbs for actions such as convert, calculate, etc.</p>
+
+<p><code>/convert?from=EURO&amp;to=CNY&amp;amount=10</code></p>
+
+<h2 id="limited-http-methods-alternatives">Limited HTTP Methods Alternatives</h2>
+
+<p>Put method type as a parameter to query, example:</p>
+
+<p><code>/dogs?method=post</code></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Count Unique String Permutations with Repeated/Duplicated Characters]]></title>
@@ -107,7 +193,7 @@ n = n_{0}, n_{0}, n_{0}, n_{1}, n_{1}, ..., n_{k}
 
 <p>I want to think about this a bit more.</p>
 
-<p>Though, honestly this is just a multinomial expansion.</p>
+<p>Though, honestly this is just a multinomial expansion, but this is just another way of looking at it.</p>
 
 ]]></content>
   </entry>

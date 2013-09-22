@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>OSX Shortcuts - A Place For Me To Leave My Thoughts</title>
+  <title>Rest Overview - A Place For Me To Leave My Thoughts</title>
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="I started to really use keyboard shortcuts when I started to use VIM. But what I dislike is that I can’t HJKL in another applications, which is tough &hellip;">
+  <meta name="description" content="I recently had an interview where we went over REST API design. I really never had any experience in designing APIs, but rather using them. After the &hellip;">
   
 
   <script type="text/x-mathjax-config">
@@ -47,7 +47,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/18/osx-shortcuts">
+  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/09/22/rest-overview">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A Place For Me To Leave My Thoughts" type="application/atom+xml">
@@ -109,7 +109,7 @@
   
   <header>
     
-      <h1 class="entry-title">OSX Shortcuts</h1>
+      <h1 class="entry-title">Rest Overview</h1>
     
     
       <p class="meta">
@@ -125,114 +125,91 @@
   
 
 
-<time datetime="2013-08-18T19:04:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-09-22T01:49:00-04:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I started to really use keyboard shortcuts when I started to use VIM. But what I dislike is that I can’t HJKL in another applications, which is tough to get over because I spent so much time learning I couldn’t use them in other applications!</p>
+<div class="entry-content"><p>I recently had an interview where we went over REST API design. I really never had any experience in designing APIs, but rather using them. After the interviewer and I talked about ways to design an API I decided I wanted to go back and really think about how to make a proper RESTful interface and the following are the notes that might be helpful for others to glance over when they are thinking about making a REST API. This conversation of RESTful will reference Rails at times because that was my experience with REST and lots of behaviors in Rails make sense once you consider how REST works.</p>
 
-<p>There are ways to use VIM keybindings in other applications, such as Vimperator, Vimium, Eclim, etc. But the hardest is that getting VIM keybindings to function means that there needs to be support for the insert, normal modes (<a href="http://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/Modes">More here</a>) to work correctly. And this is difficult to do in an effective manner!</p>
+<h2 id="think-nouns">Think Nouns</h2>
 
-<p>So that’s why the Emacs keybindings make sense! Instead of having to try to mess around with modes, I can just use Control + Key to complete an operation. The bad part about using Control is that it is on the bottom left part of a Macbook keyboard, but I do remember that people always mentioned to me that they would remap the Caps Lock key to Control.</p>
+<p>If you think about the API endpoints available when using a scaffold in Rails, the types of names associated with these endpoints tend to be nouns for a reason. Which makes sense and follows the guidelines for REST very well.</p>
 
-<p>I am sad that I can’t switch into ALL CAPS mode (which is good to have when I’m trying to write proper SQL), but being able to control the cursor without having to move my hands to the arrow keys is something I am willing to give up. The one bad part is that these keyboards shortcuts are not always available in all programs, but it works in terminal, Chrome toolbar, and text editors! Which is really covers most of the stuff I do anyway!</p>
+<p>Also, think plural nouns.</p>
 
-<p>The following is a summary of the keyboard shortcuts I find most important to know. 
-<em>Cursor is the small box or vertical line that shows where you are currently typing.</em></p>
+<p>Bad:</p>
 
-<h2 id="movement">Movement</h2>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">/all_dogs
+</span><span class="line">/list_customers</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Keyboard Shortcut</th>
-      <th style="text-align: center">Command</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">Control + A</td>
-      <td style="text-align: center">Start of Line</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Control + E</td>
-      <td style="text-align: center">End of Line</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Control + P</td>
-      <td style="text-align: center">Previous Line</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Control + N</td>
-      <td style="text-align: center">Next Line</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Control + F</td>
-      <td style="text-align: center">Move Cursor Forward</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Control + B</td>
-      <td style="text-align: center">Move Cursor Backward</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Control + V</td>
-      <td style="text-align: center">Scroll Down</td>
-    </tr>
-  </tbody>
-</table>
+<p>Good</p>
 
-<h2 id="editing">Editing</h2>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">/dogs
+</span><span class="line">/customers</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Keyboard Shortcut</th>
-      <th style="text-align: center">Command</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Control + K</td>
-      <td style="text-align: center">Cut From Cursor to End of Line (Cut)</td>
-    </tr>
-    <tr>
-      <td>Control + Y</td>
-      <td style="text-align: center">Paste The Text Removed By Control + K</td>
-    </tr>
-    <tr>
-      <td>Control + H</td>
-      <td style="text-align: center">Backspace</td>
-    </tr>
-    <tr>
-      <td>Control + D</td>
-      <td style="text-align: center">Forward Backspace</td>
-    </tr>
-    <tr>
-      <td>Control + T</td>
-      <td style="text-align: center">Transpose letters *</td>
-    </tr>
-    <tr>
-      <td>Control + O</td>
-      <td style="text-align: center">Insert Line Break</td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="use-parameters">Use Parameters</h2>
 
-<p><br /></p>
+<p>Parameters for urls are in the format <code>/noun?name=value&amp;name2=value2</code> and this should be the way to get more information for a REST command that might not fit within the REST-way of doing things. Think about queries which can filter the type of list being asked when using <code>/noun</code> or something similar.</p>
 
-<p>* If the cursor is:</p>
+<p>The parameters can be used by using the params object in a controller’s method in Rails.</p>
 
-<ul>
-  <li>between two letters, the two letters will be switched. </li>
-  <li>is in a white space between two words, the two words will be switched.</li>
-</ul>
+<p>Examples for parameters: filtering the type of response, deciding what type of data to return, pagination</p>
 
-<hr />
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">/dogs?fields=name,color,location
+</span><span class="line">/dogs?field=name,color,location&amp;limit=10&amp;offset=20</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>Google around more to find out OSX keyboard shortcuts.</p>
+<p>Use camel casing for JSON property names.</p>
+
+<h2 id="errors">Errors</h2>
+
+<p>Errors should be handled from the server and they should be returned definitely if something goes wrong and possibly if the query didn’t have an issue.</p>
+
+<p>Error messages are usually in JSON format, the following shows some possible formats.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">type: OAuthException
+</span><span class="line">message: error_message_here</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">status: http_status_code
+</span><span class="line">message: text
+</span><span class="line">code: num
+</span><span class="line">more_info: url</span></code></pre></td></tr></table></div></figure></notextile></div>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">code: http_status_code
+</span><span class="line">message: error_message</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<h2 id="response-format">Response Format</h2>
+
+<p>Sometimes the response needed isn’t normal HTML or text, it could be JSON. Remember in Rails a method can respond in multiple formats, one of them could be JSON. </p>
+
+<p>So for a client to request a response to a query in json, the client can either append a parameter, add <code>.json</code> to the end of the noun, or put <code>application/json</code> in the accept type in the header.</p>
+
+<h2 id="non-nouns">Non-Nouns</h2>
+
+<p>Use verbs for actions such as convert, calculate, etc.</p>
+
+<p><code>/convert?from=EURO&amp;to=CNY&amp;amount=10</code></p>
+
+<h2 id="limited-http-methods-alternatives">Limited HTTP Methods Alternatives</h2>
+
+<p>Put method type as a parameter to query, example:</p>
+
+<p><code>/dogs?method=post</code></p>
+
 </div>
 
 
@@ -255,7 +232,7 @@
   
 
 
-<time datetime="2013-08-18T19:04:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-09-22T01:49:00-04:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2013</time>
       
 
 
@@ -263,7 +240,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/18/osx-shortcuts/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/18/osx-shortcuts/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/09/22/rest-overview/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/09/22/rest-overview/" >Tweet</a>
   
   
   
@@ -272,10 +249,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/18/my-osx-setup/" title="Previous Post: My OSX Setup">&laquo; My OSX Setup</a>
+        <a class="basic-alignment left" href="/blog/2013/09/20/unique-string-permutations-with-repeated-slash-duplicated-characters/" title="Previous Post: Count Unique String Permutations with Repeated/Duplicated Characters">&laquo; Count Unique String Permutations with Repeated/Duplicated Characters</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/09/07/reddit-repost-blocker/" title="Next Post: Reddit Repost Blocker">Reddit Repost Blocker &raquo;</a>
       
     </p>
   </footer>
@@ -370,8 +345,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://darkzeroman.github.io/blog/2013/08/18/osx-shortcuts/';
-        var disqus_url = 'http://darkzeroman.github.io/blog/2013/08/18/osx-shortcuts/';
+        var disqus_identifier = 'http://darkzeroman.github.io/blog/2013/09/22/rest-overview/';
+        var disqus_url = 'http://darkzeroman.github.io/blog/2013/09/22/rest-overview/';
         var disqus_script = 'embed.js';
       
     (function () {
