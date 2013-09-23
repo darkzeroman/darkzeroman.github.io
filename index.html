@@ -9,7 +9,7 @@
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="I recently had an interview where we went over REST API design. I really never had any experience in designing APIs, but rather using them. After the &hellip;">
+  <meta name="description" content="Dynamic programming has been one the hardest things for me to master. Why? Because it’s a totally different way of thinking that requires a different &hellip;">
   
 
   <script type="text/x-mathjax-config">
@@ -106,6 +106,115 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/22/dynamic-programming-summary/">Dynamic Programming Summary</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-22T23:51:00-04:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Dynamic programming has been one the hardest things for me to master. Why? Because it’s a totally different way of thinking that requires a different mindset when solving problems that can use dynamic programming.</p>
+
+<p>So my way of learning dynamic programming is to just do many practice problems as possible to learn about all the tricks and try to apply it to future problems.</p>
+
+<p>The following is a summary of various dynamic programming.</p>
+
+<h3 id="max-value-contiguous-subsequence">Max Value Contiguous Subsequence</h3>
+
+<script type="math/tex; mode=display">
+T[i] = max \{T[i-1], T[i-1] + A_{i}\}
+</script>
+
+<h3 id="making-change">Making Change</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+T[i] = \min_{v_{j} < i} \{T(i-v_{j})\}
+ %]]></script>
+
+<h3 id="longest-increasing-subsequence">Longest Increasing Subsequence</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+T[i] = \max_{j < i}_{A[j] < A[i]]} \{T[j]\} + 1
+ %]]></script>
+
+<h3 id="box-stacking">Box Stacking</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+T[i] = \max_{j < i}_{D_j < D_i}_{w_j < w_i} \{T[j]\} + h_i
+ %]]></script>
+
+<h3 id="billboards">Billboards</h3>
+
+<script type="math/tex; mode=display">
+T[i] = max \{T[i-1], T[opt(e)] + r_i\}
+</script>
+
+<p>(Same as Weighted Value Schedule)</p>
+
+<h3 id="weight-values-schedule">Weight Values Schedule</h3>
+
+<script type="math/tex; mode=display">
+T[i] = max \{T[i-1], T[p(i)] + v_j\}
+p(j) = left most for j
+</script>
+
+<h3 id="integer-knapsacks-repeats">Integer Knapsacks (Repeats)</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+T[i] = max \{T[i-1], \max_{w_j < i} \{T[i-w_j] + v_j\}\}
+ %]]></script>
+
+<h3 id="integer-knapsacks-no-repeats">Integer Knapsacks (No Repeats)</h3>
+
+<script type="math/tex; mode=display">
+</script>
+
+<h3 id="edit-distance">Edit Distance</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+T[i,j] = min 
+\begin{cases} 
+C_d + T[i-1, j] \\
+T[i, j-1] + C_i \\
+\left\{\begin{matrix}
+ T[i-1, j-1]&  A[i] = B[j]\\ 
+ T[i-1, j-1] + C_R& A[i] \neq B[j]
+\end{matrix}\right.
+\end{cases}
+ %]]></script>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -816,142 +925,6 @@ n = n_{0}, n_{0}, n_{0}, n_{1}, n_{1}, ..., n_{k}
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/18/osx-shortcuts/">OSX Shortcuts</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-18T19:04:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I started to really use keyboard shortcuts when I started to use VIM. But what I dislike is that I can’t HJKL in another applications, which is tough to get over because I spent so much time learning I couldn’t use them in other applications!</p>
-
-<p>There are ways to use VIM keybindings in other applications, such as Vimperator, Vimium, Eclim, etc. But the hardest is that getting VIM keybindings to function means that there needs to be support for the insert, normal modes (<a href="http://en.wikibooks.org/wiki/Learning_the_vi_Editor/Vim/Modes">More here</a>) to work correctly. And this is difficult to do in an effective manner!</p>
-
-<p>So that’s why the Emacs keybindings make sense! Instead of having to try to mess around with modes, I can just use Control + Key to complete an operation. The bad part about using Control is that it is on the bottom left part of a Macbook keyboard, but I do remember that people always mentioned to me that they would remap the Caps Lock key to Control.</p>
-
-<p>I am sad that I can’t switch into ALL CAPS mode (which is good to have when I’m trying to write proper SQL), but being able to control the cursor without having to move my hands to the arrow keys is something I am willing to give up. The one bad part is that these keyboards shortcuts are not always available in all programs, but it works in terminal, Chrome toolbar, and text editors! Which is really covers most of the stuff I do anyway!</p>
-
-<p>The following is a summary of the keyboard shortcuts I find most important to know. 
-<em>Cursor is the small box or vertical line that shows where you are currently typing.</em></p>
-
-<h2 id="movement">Movement</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Keyboard Shortcut</th>
-      <th style="text-align: center">Command</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">Control + A</td>
-      <td style="text-align: center">Start of Line</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Control + E</td>
-      <td style="text-align: center">End of Line</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Control + P</td>
-      <td style="text-align: center">Previous Line</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Control + N</td>
-      <td style="text-align: center">Next Line</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Control + F</td>
-      <td style="text-align: center">Move Cursor Forward</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Control + B</td>
-      <td style="text-align: center">Move Cursor Backward</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">Control + V</td>
-      <td style="text-align: center">Scroll Down</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="editing">Editing</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Keyboard Shortcut</th>
-      <th style="text-align: center">Command</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Control + K</td>
-      <td style="text-align: center">Cut From Cursor to End of Line (Cut)</td>
-    </tr>
-    <tr>
-      <td>Control + Y</td>
-      <td style="text-align: center">Paste The Text Removed By Control + K</td>
-    </tr>
-    <tr>
-      <td>Control + H</td>
-      <td style="text-align: center">Backspace</td>
-    </tr>
-    <tr>
-      <td>Control + D</td>
-      <td style="text-align: center">Forward Backspace</td>
-    </tr>
-    <tr>
-      <td>Control + T</td>
-      <td style="text-align: center">Transpose letters *</td>
-    </tr>
-    <tr>
-      <td>Control + O</td>
-      <td style="text-align: center">Insert Line Break</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><br /></p>
-
-<p>* If the cursor is:</p>
-
-<ul>
-  <li>between two letters, the two letters will be switched. </li>
-  <li>is in a white space between two words, the two words will be switched.</li>
-</ul>
-
-<hr />
-
-<p>Google around more to find out OSX keyboard shortcuts.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -967,6 +940,10 @@ n = n_{0}, n_{0}, n_{0}, n_{1}, n_{1}, ..., n_{k}
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/22/dynamic-programming-summary/">Dynamic Programming Summary</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/09/22/rest-overview/">Rest Overview</a>
       </li>
     
@@ -980,10 +957,6 @@ n = n_{0}, n_{0}, n_{0}, n_{1}, n_{1}, ..., n_{k}
     
       <li class="post">
         <a href="/blog/2013/09/17/arraylist-vs-linkedlist/">ArrayList vs LinkedList</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/15/android-styling-guide/">Android Styling Guide</a>
       </li>
     
   </ul>

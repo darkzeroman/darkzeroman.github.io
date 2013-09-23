@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Javascript/Node Build System for Sublime - A Place For Me To Leave My Thoughts</title>
+  <title>Dynamic Programming Summary - A Place For Me To Leave My Thoughts</title>
   <meta name="author" content="Vidhur Vohra">
 
   
-  <meta name="description" content="To be able to build Javascript in Sublime Text, it’s necessary to add a new Build System. To be able to do that, it’s necessary to first have Node &hellip;">
+  <meta name="description" content="Dynamic programming has been one the hardest things for me to master. Why? Because it’s a totally different way of thinking that requires a different &hellip;">
   
 
   <script type="text/x-mathjax-config">
@@ -47,7 +47,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime">
+  <link rel="canonical" href="http://darkzeroman.github.io/blog/2013/09/22/dynamic-programming-summary">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="A Place For Me To Leave My Thoughts" type="application/atom+xml">
@@ -109,7 +109,7 @@
   
   <header>
     
-      <h1 class="entry-title">Javascript/Node Build System for Sublime</h1>
+      <h1 class="entry-title">Dynamic Programming Summary</h1>
     
     
       <p class="meta">
@@ -125,34 +125,87 @@
   
 
 
-<time datetime="2013-08-18T16:56:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-09-22T23:51:00-04:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>To be able to build Javascript in Sublime Text, it’s necessary to add a new Build System.</p>
+<div class="entry-content"><p>Dynamic programming has been one the hardest things for me to master. Why? Because it’s a totally different way of thinking that requires a different mindset when solving problems that can use dynamic programming.</p>
 
-<p>To be able to do that, it’s necessary to first have Node installed, so head over to <a href="http://nodejs.org/download/">Node.js homepage</a> to install node.js first.</p>
+<p>So my way of learning dynamic programming is to just do many practice problems as possible to learn about all the tricks and try to apply it to future problems.</p>
 
-<p>With the Sublime Text program open, navigate to <code>Tools</code> -&gt; <code>Build System</code> -&gt; <code>New Build System ...</code></p>
+<p>The following is a summary of various dynamic programming.</p>
 
-<p>And add the following:</p>
+<h3 id="max-value-contiguous-subsequence">Max Value Contiguous Subsequence</h3>
 
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span>Node.sublime-build</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="p">{</span>
-</span><span class="line">    <span class="s2">&quot;cmd&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;/usr/local/bin/node&quot;</span><span class="p">,</span> <span class="s2">&quot;$file&quot;</span><span class="p">],</span>
-</span><span class="line">    <span class="s2">&quot;working_dir&quot;</span><span class="o">:</span> <span class="s2">&quot;${project_path:${folder}}&quot;</span>
-</span><span class="line"><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<script type="math/tex; mode=display">
+T[i] = max \{T[i-1], T[i-1] + A_{i}\}
+</script>
 
-<p>It might be necessary to adjust the path to node for your own setup.</p>
+<h3 id="making-change">Making Change</h3>
 
-<p>Now save, restart Sublime Text, and you should be able to build Javascript with Sublime Text!</p>
+<script type="math/tex; mode=display">% <![CDATA[
+
+T[i] = \min_{v_{j} < i} \{T(i-v_{j})\}
+ %]]></script>
+
+<h3 id="longest-increasing-subsequence">Longest Increasing Subsequence</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+T[i] = \max_{j < i}_{A[j] < A[i]]} \{T[j]\} + 1
+ %]]></script>
+
+<h3 id="box-stacking">Box Stacking</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+T[i] = \max_{j < i}_{D_j < D_i}_{w_j < w_i} \{T[j]\} + h_i
+ %]]></script>
+
+<h3 id="billboards">Billboards</h3>
+
+<script type="math/tex; mode=display">
+T[i] = max \{T[i-1], T[opt(e)] + r_i\}
+</script>
+
+<p>(Same as Weighted Value Schedule)</p>
+
+<h3 id="weight-values-schedule">Weight Values Schedule</h3>
+
+<script type="math/tex; mode=display">
+T[i] = max \{T[i-1], T[p(i)] + v_j\}
+p(j) = left most for j
+</script>
+
+<h3 id="integer-knapsacks-repeats">Integer Knapsacks (Repeats)</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+T[i] = max \{T[i-1], \max_{w_j < i} \{T[i-w_j] + v_j\}\}
+ %]]></script>
+
+<h3 id="integer-knapsacks-no-repeats">Integer Knapsacks (No Repeats)</h3>
+
+<script type="math/tex; mode=display">
+</script>
+
+<h3 id="edit-distance">Edit Distance</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+T[i,j] = min 
+\begin{cases} 
+C_d + T[i-1, j] \\
+T[i, j-1] + C_i \\
+\left\{\begin{matrix}
+ T[i-1, j-1]&  A[i] = B[j]\\ 
+ T[i-1, j-1] + C_R& A[i] \neq B[j]
+\end{matrix}\right.
+\end{cases}
+ %]]></script>
 </div>
 
 
@@ -175,7 +228,7 @@
   
 
 
-<time datetime="2013-08-18T16:56:00-04:00" pubdate data-updated="true">Aug 18<span>th</span>, 2013</time>
+<time datetime="2013-09-22T23:51:00-04:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2013</time>
       
 
 
@@ -183,7 +236,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://darkzeroman.github.io/blog/2013/09/22/dynamic-programming-summary/" data-via="darkzeroman" data-counturl="http://darkzeroman.github.io/blog/2013/09/22/dynamic-programming-summary/" >Tweet</a>
   
   
   
@@ -192,10 +245,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/18/markdown-reference/" title="Previous Post: Markdown Reference">&laquo; Markdown Reference</a>
+        <a class="basic-alignment left" href="/blog/2013/09/22/rest-overview/" title="Previous Post: Rest Overview">&laquo; Rest Overview</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/08/18/efficient-sql/" title="Next Post: Efficient SQL (Custom)">Efficient SQL (Custom) &raquo;</a>
       
     </p>
   </footer>
@@ -290,8 +341,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime/';
-        var disqus_url = 'http://darkzeroman.github.io/blog/2013/08/18/js-slash-node-build-system-for-sublime/';
+        var disqus_identifier = 'http://darkzeroman.github.io/blog/2013/09/22/dynamic-programming-summary/';
+        var disqus_url = 'http://darkzeroman.github.io/blog/2013/09/22/dynamic-programming-summary/';
         var disqus_script = 'embed.js';
       
     (function () {

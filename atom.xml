@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-09-22T11:00:37-04:00</updated>
+  <updated>2013-09-23T00:35:39-04:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -12,6 +12,88 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dynamic Programming Summary]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/09/22/dynamic-programming-summary/"/>
+    <updated>2013-09-22T23:51:00-04:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/09/22/dynamic-programming-summary</id>
+    <content type="html"><![CDATA[<p>Dynamic programming has been one the hardest things for me to master. Why? Because it’s a totally different way of thinking that requires a different mindset when solving problems that can use dynamic programming.</p>
+
+<p>So my way of learning dynamic programming is to just do many practice problems as possible to learn about all the tricks and try to apply it to future problems.</p>
+
+<p>The following is a summary of various dynamic programming.</p>
+
+<h3 id="max-value-contiguous-subsequence">Max Value Contiguous Subsequence</h3>
+
+<script type="math/tex; mode=display">
+T[i] = max \{T[i-1], T[i-1] + A_{i}\}
+</script>
+
+<h3 id="making-change">Making Change</h3>
+
+<script type="math/tex; mode=display">% &lt;![CDATA[
+
+T[i] = \min_{v_{j} < i} \{T(i-v_{j})\}
+ %]]&gt;</script>
+
+<h3 id="longest-increasing-subsequence">Longest Increasing Subsequence</h3>
+
+<script type="math/tex; mode=display">% &lt;![CDATA[
+
+T[i] = \max_{j < i}_{A[j] < A[i]]} \{T[j]\} + 1
+ %]]&gt;</script>
+
+<h3 id="box-stacking">Box Stacking</h3>
+
+<script type="math/tex; mode=display">% &lt;![CDATA[
+
+T[i] = \max_{j < i}_{D_j < D_i}_{w_j < w_i} \{T[j]\} + h_i
+ %]]&gt;</script>
+
+<h3 id="billboards">Billboards</h3>
+
+<script type="math/tex; mode=display">
+T[i] = max \{T[i-1], T[opt(e)] + r_i\}
+</script>
+
+<p>(Same as Weighted Value Schedule)</p>
+
+<h3 id="weight-values-schedule">Weight Values Schedule</h3>
+
+<script type="math/tex; mode=display">
+T[i] = max \{T[i-1], T[p(i)] + v_j\}
+p(j) = left most for j
+</script>
+
+<h3 id="integer-knapsacks-repeats">Integer Knapsacks (Repeats)</h3>
+
+<script type="math/tex; mode=display">% &lt;![CDATA[
+
+T[i] = max \{T[i-1], \max_{w_j < i} \{T[i-w_j] + v_j\}\}
+ %]]&gt;</script>
+
+<h3 id="integer-knapsacks-no-repeats">Integer Knapsacks (No Repeats)</h3>
+
+<script type="math/tex; mode=display">
+</script>
+
+<h3 id="edit-distance">Edit Distance</h3>
+
+<script type="math/tex; mode=display">% &lt;![CDATA[
+
+T[i,j] = min 
+\begin{cases} 
+C_d + T[i-1, j] \\
+T[i, j-1] + C_i \\
+\left\{\begin{matrix}
+ T[i-1, j-1]&  A[i] = B[j]\\ 
+ T[i-1, j-1] + C_R& A[i] \neq B[j]
+\end{matrix}\right.
+\end{cases}
+ %]]&gt;</script>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rest Overview]]></title>
