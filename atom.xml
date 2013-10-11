@@ -4,7 +4,7 @@
   <title><![CDATA[A Place For Me To Leave My Thoughts]]></title>
   <link href="http://darkzeroman.github.io/atom.xml" rel="self"/>
   <link href="http://darkzeroman.github.io/"/>
-  <updated>2013-09-23T00:35:39-04:00</updated>
+  <updated>2013-10-11T08:39:30-04:00</updated>
   <id>http://darkzeroman.github.io/</id>
   <author>
     <name><![CDATA[Vidhur Vohra]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Random Quotes]]></title>
+    <link href="http://darkzeroman.github.io/blog/2013/10/11/random-quotes/"/>
+    <updated>2013-10-11T08:35:00-04:00</updated>
+    <id>http://darkzeroman.github.io/blog/2013/10/11/random-quotes</id>
+    <content type="html"><![CDATA[<p>“In the land of the blind, the one-eyed man is king”</p>
+
+<p>“You can’t take it with you”</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dynamic Programming Summary]]></title>
